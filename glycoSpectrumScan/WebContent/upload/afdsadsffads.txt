@@ -1,0 +1,19 @@
+Clycan Number  : 1
+Hexose : 1
+HexNAc : 
+Deoxyhexose: 
+Pentose: 
+NeuAc  : 
+NeuGc: 
+Phosphate: 
+Sulphate: 
+
+Clycan Number: 2
+Hexose: 2
+HexNAc: 4
+Deoxyhexose: 6
+Pentose: 8
+NeuAc: 10
+NeuGc: 12
+Phosphate: 14
+Sulphate: 16

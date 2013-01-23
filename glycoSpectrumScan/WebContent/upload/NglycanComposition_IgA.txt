@@ -1,0 +1,320 @@
+Clycan Number 1
+Hexose	5
+HexNAc	2
+Deoxyhexose	
+Pentose
+NeuAc
+NeuGc
+Phosphate	
+Sulphate	
+
+Clycan Number 2
+Hexose	6
+HexNAc	2
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 3
+Hexose	3
+HexNAc	4
+Deoxyhexose	1
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 4
+Hexose	4
+HexNAc	4
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 5
+Hexose	3
+HexNAc	5
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 6
+Hexose	7
+HexNAc	2
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 7
+Hexose	4
+HexNAc	3
+Deoxyhexose	
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 8
+Hexose	5
+HexNAc	4
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 9
+Hexose	3
+HexNAc	5
+Deoxyhexose	1
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 10
+Hexose	4
+HexNAc	5
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 11
+Hexose	8
+HexNAc	2
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 12
+Hexose	5
+HexNAc	3
+Deoxyhexose	
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 13
+Hexose	4
+HexNAc	4
+Deoxyhexose	
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 14
+Hexose	5
+HexNAc	4
+Deoxyhexose	1
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 15
+Hexose	4
+HexNAc	5
+Deoxyhexose	1
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 16
+Hexose	5
+HexNAc	5
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 17
+Hexose	9
+HexNAc	2
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 18
+Hexose	6
+HexNAc	3
+Deoxyhexose	
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 19
+Hexose	4
+HexNAc	4
+Deoxyhexose	1
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 20
+Hexose	5
+HexNAc	4
+Deoxyhexose	
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 21
+Hexose	4
+HexNAc	5
+Deoxyhexose	
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 22
+Hexose	5
+HexNAc	5
+Deoxyhexose	1
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 23
+Hexose	5
+HexNAc	4
+Deoxyhexose	1
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 24
+Hexose	5
+HexNAc	4
+Deoxyhexose	3
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 25
+Hexose	4
+HexNAc	5
+Deoxyhexose	1
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 26
+Hexose	5
+HexNAc	5
+Deoxyhexose	
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 27
+Hexose	5
+HexNAc	4
+Deoxyhexose	
+Pentose	
+NeuAc	2
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 28	
+Hexose	5
+HexNAc	4
+Deoxyhexose	2
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 29
+Hexose	5
+HexNAc	5
+Deoxyhexose	1
+Pentose	
+NeuAc	1
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 30
+Hexose	5
+HexNAc	4
+Deoxyhexose	1
+Pentose	
+NeuAc	2
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 31
+Hexose	5
+HexNAc	5
+Deoxyhexose	1
+Pentose	
+NeuAc	2
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 32
+Hexose	4
+HexNAc	4
+Deoxyhexose	1
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
