@@ -60,7 +60,7 @@ public class DrawImagesServlet extends HttpServlet {
     }
  public void Histograms(double [] x, double [] y) throws IOException{
 		
-	 System.out.println("sssssssssssssssssssssssssss");
+	// System.out.println("sssssssssssssssssssssssssss");
 		double max = y[0];
 		double value= 0;
 		for(int i=0; i<y.length; i++){
@@ -145,7 +145,8 @@ public class DrawImagesServlet extends HttpServlet {
 				
 		/* get filenames frome a folder */
 		ArrayList <String> images = new ArrayList<String>(); 
-		File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+		File folder = new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/loadimages");
+	//	File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
 		File[] listOfFiles = folder.listFiles();
 		for (int i = 0; i < listOfFiles.length; i++) {
 		      if (listOfFiles[i].isFile()) {
@@ -581,7 +582,9 @@ public class DrawImagesServlet extends HttpServlet {
 		
 		/* get file names from a folder */
 		ArrayList <String> images = new ArrayList<String>(); 
-		File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+		
+		//File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+		File folder = new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/loadimages");
 		File[] listOfFiles = folder.listFiles();
 		for (int i = 0; i < listOfFiles.length; i++) {
 		      if (listOfFiles[i].isFile()) {
@@ -589,7 +592,7 @@ public class DrawImagesServlet extends HttpServlet {
 		       
 		      } 
 		}
-		System.out.println("Image size: "+ images.size());
+		//System.out.println("Image size: "+ images.size());
 		/*
 		for(int i=0; i<structureIDs.size(); i++){
 			String [] structureID = structureIDs.get(i);
@@ -624,11 +627,14 @@ public class DrawImagesServlet extends HttpServlet {
 				for(int j=0; j<images.size(); j++){
 				
 					if(s.equals(images.get(j).toString())){
-						ImageIcon icon = new ImageIcon("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages/"+images.get(j));
+						
+						//ImageIcon icon = new ImageIcon("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages/"+images.get(j));
+						ImageIcon icon = new ImageIcon("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/loadimages/"+images.get(j));
 						Image image2 = icon.getImage();
-						
+					//	Image image = image2;
 						Image image=createResizedCopy(image2,80,50,true);
-						
+								//createResizedCopy(image2,80,50,true);
+								//createResizedCopy(image2,80,50,true);
 							
 							boolean check= true;
 							for(Double d: x_axis_check  ){
@@ -839,7 +845,7 @@ public class DrawImagesServlet extends HttpServlet {
 			
 			for(int i=0; i<zs.length; i++){
 				zs[i]=Integer.parseInt(numberof_x_axis_for_each_z[i]);
-				System.out.println(zs[i]);
+		//		System.out.println(zs[i]);
 			}
 		}
 		
@@ -852,7 +858,7 @@ public class DrawImagesServlet extends HttpServlet {
 		
 		if(request.getParameterValues("for_X_axis")!=null){
 			 String [] combination_a_mass = request.getParameterValues("Combination_a_mass"); 
-			 System.out.println("xxxxxxxxxxxxxxxxxx");
+		//	 System.out.println("xxxxxxxxxxxxxxxxxx");
 			 String[] Highlight= request.getParameterValues("for_X_axis");
 			 double [] Highlight_X = new double [Highlight.length];
 			 double [] Highlight_Y = new double [Highlight.length];
@@ -877,8 +883,8 @@ public class DrawImagesServlet extends HttpServlet {
 			 
 			 /*here*****************************************************************************************/
 			 for(int i=0; i<combination_average_mass.length; i++){
-				 System.out.print(Highlight_X[i] +" "+  Highlight_Y[i] +" "+ combination_average_mass[i] );
-				 System.out.println();
+//				 System.out.print(Highlight_X[i] +" "+  Highlight_Y[i] +" "+ combination_average_mass[i] );
+//				 System.out.println();
 			 }
 			 LinkedList <String []> structureIDs =new LinkedList <String[]> (); 
 			 for(int i=0; i<combination_average_mass.length; i++){
@@ -897,15 +903,15 @@ public class DrawImagesServlet extends HttpServlet {
 					 structureIDs.add(structureID);
 				 }
 			 }
-			 System.out.println(structureIDs.size());
-			 System.out.println(Highlight_X.length);
-			 System.out.println(combination_average_mass.length);
+	//		 System.out.println(structureIDs.size());
+	//		 System.out.println(Highlight_X.length);
+	//		 System.out.println(combination_average_mass.length);
 			 for(String[] s: structureIDs){
 				 for(String ss: s){
 					
-					 System.out.print(ss+" ");
+	//				 System.out.print(ss+" ");
 				 }
-				 System.out.println();
+	//			 System.out.println();
 			 }
 			 
 			 Histograms(X_Axis, Y_Axis,Highlight_X,Highlight_Y,zs,structureIDs);
@@ -917,7 +923,9 @@ public class DrawImagesServlet extends HttpServlet {
 		
 		/* get all files name from folder */
 		ArrayList <String> images = new ArrayList<String>(); 
-		File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+		
+		//File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+		File folder = new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/loadimages");
 		File[] listOfFiles = folder.listFiles();
 		for (int i = 0; i < listOfFiles.length; i++) {
 		      if (listOfFiles[i].isFile()) {

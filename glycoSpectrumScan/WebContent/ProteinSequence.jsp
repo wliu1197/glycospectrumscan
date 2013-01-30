@@ -6,19 +6,22 @@
 					ArrayList <glycans> gs  = (ArrayList <glycans>)request.getAttribute("glycanss");
 				%>
 				
-			  <%}%>
+			  <%} else{%>
 						
- <div class="container">
- 	<div class="hero-unit">
-						<span class="tooltip1" onmouseover="tooltip1.pop(this, '#demo2_tip')"><a>Please read me first</a></span>	
-						  <div style="display:none;">
-            				<div id="demo2_tip">
-              				  <img src="img/mq-inline-rgb.jpg"  style="float:right;margin-left:12px;" alt="" />
-              				  <b>Please note that:</b><br /><br />
-               					* The amino acid sequence should be entered using <strong>one-letter-code</strong>.<br >
-               					* All <strong>whitespace</strong>, and  all <strong> characters different from letters are ignored</strong>.
-            			  </div>
-        				</div>
+ 		<div class="container">
+ 	
+ 			<div class="hero-unit">
+ 	<%} %>
+ 				<a href="#" rel="tooltip"  data-placement="right" title="All whitespace, and  all characters different from letters are ignored" >Please read me first</a>
+					<script>
+	 					$('[rel="tooltip"]').tooltip('toggle');
+	 					$('[rel="tooltip"]').tooltip('hide');
+	 	
+	 		
+			
+					</script>							  						 
+						
+	
 	<form action="ProteinSequence_Servlet" onsubmit="return CheckProteinSequenceInput(this);" method="post" name="TableForm">
 			<table id="Creat_table" border="0">
 				<tr>
@@ -98,7 +101,9 @@
 					    <input type="hidden" name="total_average_mass" > 
 					    <%} %>
 					    
-					    <br><input class="btn btn-primary btn-small" type="submit" value="Submit">
+					    <br><input class="btn btn-primary btn-small" type="submit" value="Submit"><br>
+					    <br><br>
+					    <a class="btn btn-small" href="GlycanMass.jsp"><i class="icon-circle-arrow-left "></i> Back </a><br>
 				   </td>
 				</tr>
 			</table>

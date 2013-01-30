@@ -17,7 +17,7 @@
 	<div class="container">
 	 
 	 	<div class="hero-unit">
-	 		<h1>Add images to chart</h1><br>
+	 		<h1>Generate Mass Spectrum</h1><br>
 	<%
 	
 	double [] X_Axis =(double [])request.getAttribute("X_Axis");
@@ -26,83 +26,12 @@
 	%>
 	
 	<table id="Creat_table" border="0" cellpadding="20"  >
-	<tr>
 	
- 	<td>
-		<p style="font-size:30px;"> <a>Images in the system are </a> </p>
-		<% if( !images.get(0).equals("No images in the system !!!") ){ %>
-		
-			<% for(int i=0; i< images.size(); i++){%>
-			<!-- 	<%=images.get(i) %><br> -->
-			<%}%>
-		
-		<%}else{ %>
-		 	<%=images.get(0) %>
-		<%} %>
-		<form action="Delete_ImageSevlet" onsubmit="return testIt(this);" method="post" name="TableForm">
-		<% if(request.getAttribute("ChargeState")!=null){
-    		
-    		String ChargeState = (String)request.getAttribute("ChargeState");
-    		String Range = (String)request.getAttribute("Range");%>
-    		<input type="hidden" name="ChargeState" value=<%=ChargeState%>>
-    		<input type="hidden" name="Range" value=<%=Range%>>
-    	<%	}%>
-    		
-			<% for(int i=0; i<X_Axis.length; i++){ %>
-				<input type="hidden" name="X-Axis" value=<%=X_Axis[i]%>>
-				<input type="hidden" name="Y-Axis" value=<%=Y_Axis[i]%>>
-			<%} %>
-		<input type="hidden" name="DataforSequence" value=<%=DataforSequence %>>	
-		<input  class="btn btn-primary btn-medium" type="submit" value="Clear Images">
-		</form>
-		
-		<form method="post" action="DrawImagesServlet"  >
-		
-		
-    	<% if(request.getAttribute("ChargeState")!=null){
-    		
-    		String ChargeState = (String)request.getAttribute("ChargeState");
-    		String Range = (String)request.getAttribute("Range");%>
-    		<input type="hidden" name="ChargeState" value=<%=ChargeState%>>
-    		<input type="hidden" name="Range" value=<%=Range%>>
-    	<%	}%>
-    	
-    	<%	for(int i=0; i<X_Axis.length; i++){ %>
-			<input type="hidden" name="X-Axis" value=<%=X_Axis[i]%>>
-			<input type="hidden" name="Y-Axis" value=<%=Y_Axis[i]%>>
-		<%} %>
-    	 <input type="hidden" name="DataforSequence" value=<%=DataforSequence %>>
-   		 <input class="btn btn-primary btn-medium" type="submit" value="Get New Chart" />       
-   		 </form>
-		</td>
-		
-	   <td >
-		<p style="font-size:30px;"> <a>Upload images here</a> </p>
-		
-		<form method="post" action="UploadImagesServlet"  enctype="multipart/form-data">
-		<% if(request.getAttribute("ChargeState")!=null){
-    		
-    		String ChargeState = (String)request.getAttribute("ChargeState");
-    		String Range = (String)request.getAttribute("Range");%>
-    		<input type="hidden" name="ChargeState" value=<%=ChargeState%>>
-    		<input type="hidden" name="Range" value=<%=Range%>>
-    	<%	}%>
-			<% for(int i=0; i<X_Axis.length; i++){ %>
-				<input type="hidden" name="X-Axis" value=<%=X_Axis[i]%>>
-				<input type="hidden" name="Y-Axis" value=<%=Y_Axis[i]%>>
-			<%} %>
-			 <input type="hidden" name="DataforSequence" value=<%=DataforSequence %>>
-	        Select file to upload: <input type="file" name="dataFile"
-	            id="fileChooser" /><br />
-	            
-	     <br /> <input class="btn btn-primary btn-medium" type="submit" value="Upload" />        
-	    </form>
-	    </td>
-    </tr>
     <tr>
    	<td>
 	 <a>Charge state for sequence: </a> <%=DataforSequence %> 		
-	
+	<br>
+	<br>
 	<form method="post" action="ChargeStateServlet"  onsubmit="return testRange(this);" >
 		<% for(int i=0; i<X_Axis.length; i++){ %>
 			<input type="hidden" name="X-Axis" value=<%=X_Axis[i]%>>
@@ -119,8 +48,8 @@
 				<option value="3">3</option>
 				<option value="4">4</option>
 				
-		</select><br>
-		<a> Range:</a> <input type="text" name="Range" ><br>
+		</select><br><br>
+		<a> Range:</a> <input type="text" name="Range" ><br><br>
 		<input class="btn btn-primary btn-medium" type="submit" value="Get Result" /> 
 	</form>
 	</td>
@@ -426,12 +355,12 @@
 			</div>
 		</div>
 	<%} %>
-	
+	<!-- 
 	<a>Charge state:</a><%=chargestateZ %>	<br>
 	<a>Range:</a><%=Ranges %>
-		
+		 -->
 	<%}%><br>
-	 
+	 <!--  
 	<% for(int i=0; i<gs_NM.size(); i++){ %>
 		<a>Mass adding to: </a> <%=gs.glyco_sequence.get(i) %></a><br>
 		<%for(int j=0; j<gs_NM.get(i).new_m_mass.size(); j++){ %>	
@@ -439,8 +368,11 @@
 			<%=gs.Combination.get(i).Combination.get(j)%> <a>Combination Average_mass </a><%=gs.Combination.get(i).a_mass[j] %>   <a>: New Monoisotopic mass:</a> <%=gs_NM.get(i).new_m_mass.get(j)%> <a>New Average mass:</a> <%=gs_NM.get(i).new_a_mass.get(j)%> <br> 
 		<%} %>
 	<%} %>
-	
-	
+	-->
+	<br>
+		<footer>
+        <p>&copy; Macquarie University 2012</p>
+	</footer>
 </div>
 </body>
 </html>

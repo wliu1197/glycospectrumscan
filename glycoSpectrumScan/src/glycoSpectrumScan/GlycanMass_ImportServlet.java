@@ -2,6 +2,8 @@ package glycoSpectrumScan;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.util.*;
  
 import javax.servlet.RequestDispatcher;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.IOUtils;
 
 import Amino_acids.glycan_value;
 import Amino_acids.glycan_value_list;
@@ -24,8 +27,9 @@ import Amino_acids.glycans;
 public class GlycanMass_ImportServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private static final String UPLOAD_DIRECTORY = "C:/Job/Milestones/glycoSpectrumScan/WebContent/upload";
-    private static final int THRESHOLD_SIZE = 1024 * 1024 * 3; // 3MB
+	//private static final String UPLOAD_DIRECTORY = "C:/Job/Milestones/glycoSpectrumScan/WebContent/upload";
+	private static final String UPLOAD_DIRECTORY = "C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/upload";
+	private static final int THRESHOLD_SIZE = 1024 * 1024 * 3; // 3MB
     private static final int MAX_FILE_SIZE = 1024 * 1024 * 40; // 40MB
     private static final int REQUEST_SIZE = 1024 * 1024 * 50; // 50MB
        
@@ -64,7 +68,7 @@ public class GlycanMass_ImportServlet extends HttpServlet {
 		return result;
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	//	System.out.println("Hi");
 		String output = "";
 		if (!ServletFileUpload.isMultipartContent(request)) {
 	            // if not, we stop here
@@ -99,6 +103,21 @@ public class GlycanMass_ImportServlet extends HttpServlet {
 	                // processes only fields that are not form fields
 	                if (!item.isFormField()) {
 	                    String fileName = new File(item.getName()).getName();
+	                    
+	                    
+	                    /*
+	                     * Without save file to disk, read data directly. 
+	                     *
+	                    InputStreamReader reader = new InputStreamReader(item.getInputStream());
+	                    StringWriter writer = new StringWriter();
+	                    IOUtils.copy(reader, writer);
+	                    String theString = writer.toString();
+	                    System.out.println(theString);
+	                   
+	                    ************************************************/
+	                    
+	                    
+	                    
 	                    String filePath = uploadPath + File.separator + fileName;
 	                    File storeFile = new File(filePath);
 	                   

@@ -75,7 +75,7 @@ public class ProteinSequence_Servlet extends HttpServlet {
 		String total_average_masss = request.getParameter("total_average_mass").toString();
 		String Treat = request.getParameter("Treat").toString().toUpperCase();
 		
-		System.out.println(Treat);
+	//	System.out.println(Treat);
 		ArrayList <glycans> glycans = new ArrayList();
 		if(request.getParameterValues("gs_monoisotopic_mass")!=null){
 			String [] gs_monoisotopic_mass = request.getParameterValues("gs_monoisotopic_mass");	
@@ -381,9 +381,9 @@ public class ProteinSequence_Servlet extends HttpServlet {
 			for(int i=0; i<PM.ProteinSequenceSplit.size(); i++){
 				int count = 0;
 			    int idx = 0;
-				System.out.println(PM.ProteinSequenceSplit.get(i));
-				System.out.print(PM.average_mass[i]+" ");
-				System.out.println(PM.monoisotopic_mass[i]);
+		//		System.out.println(PM.ProteinSequenceSplit.get(i));
+		//		System.out.print(PM.average_mass[i]+" ");
+		//		System.out.println(PM.monoisotopic_mass[i]);
 				
 				while ((idx = PM.ProteinSequenceSplit.get(i).indexOf("C", idx)) != -1)
 			     {
@@ -393,9 +393,9 @@ public class ProteinSequence_Servlet extends HttpServlet {
 				PM.average_mass[i] = PM.average_mass[i] + count*57.052;
 				PM.monoisotopic_mass[i] = PM.monoisotopic_mass[i]+count*57.02146;
 				
-				System.out.println(PM.ProteinSequenceSplit.get(i));
-				System.out.print(PM.average_mass[i]+" ");
-				System.out.println(PM.monoisotopic_mass[i]);
+			//	System.out.println(PM.ProteinSequenceSplit.get(i));
+			//	System.out.print(PM.average_mass[i]+" ");
+			//	System.out.println(PM.monoisotopic_mass[i]);
 				
 			}
 		}

@@ -20,23 +20,26 @@
 	 		<!-- <a>Total monoisotopic mass is:</a><%=total_monoisotopic_mass %><a>/Total average mass is:</a><%=total_average_mass %><br> -->	
 			 	<table border='1' width="100%">
 			 		<tr>
-			 			<td><a>Clycan number</a></td>
+			 			<td><a>Glycan number</a></td>
 			 			<td><a>Total monoisotopic</a></td>
 			 			<td><a>Total average</a></td>
 			 		</tr>
 			 		<%
+			 		DecimalFormat df = new DecimalFormat("#.##");
 			 		for(int i=0; i<gs.size();i++){
+			 			String MM = df.format(gs.get(i).Monoisotopic_Mass);
+			 			String AM = df.format(gs.get(i).Average_Mass);
 			 		%>
 			 		<tr>
 			 			<td><%=i+1 %></td>
-			 			<td><%=gs.get(i).Monoisotopic_Mass %></td>
-			 			<td><%=gs.get(i).Average_Mass %></td>
+			 			<td><%=MM %></td>
+			 			<td><%=AM %></td>
 			 		</tr>
 			 		<%} %>
 			 	</table><br>
-			<a href="GlycanMass.jsp">Back</a>
-	 	</div>
-	</div>
+			
+			
+	 <br>
 	<jsp:include page="ProteinSequence.jsp" flush="true" />
 
 </body>

@@ -138,7 +138,8 @@ public class UploadImagesServlet extends HttpServlet {
 	            
 	            /* get all files name from folder */
 				ArrayList <String> images = new ArrayList<String>(); 
-				File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+				File folder = new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/loadimages");
+			 //File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
 				File[] listOfFiles = folder.listFiles();
 				for (int i = 0; i < listOfFiles.length; i++) {
 				      if (listOfFiles[i].isFile()) {

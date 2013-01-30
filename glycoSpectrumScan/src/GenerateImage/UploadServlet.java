@@ -3,6 +3,7 @@ package GenerateImage;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -35,8 +36,9 @@ import javax.swing.*;
  */
 public class UploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	 private static final String UPLOAD_DIRECTORY = "C:/Job/Milestones/glycoSpectrumScan/WebContent/upload";
+	
+	// private static final String UPLOAD_DIRECTORY = "C:/Job/Milestones/glycoSpectrumScan/WebContent/upload";
+	 private static final String UPLOAD_DIRECTORY = "C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/upload";
 	 private static final int THRESHOLD_SIZE = 1024 * 1024 * 10; // 10MB
 	 private static final int MAX_FILE_SIZE = 1024 * 1024 * 40; // 40MB
 	 private static final int REQUEST_SIZE = 1024 * 1024 * 50; // 50MB
@@ -132,8 +134,10 @@ public class UploadServlet extends HttpServlet {
 		renderer.setSeriesPaint(0, Color.gray);	
 				
 		/* get filenames frome a folder */
+		
 		ArrayList <String> images = new ArrayList<String>(); 
-		File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+		File folder = new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/loadimages");
+		//File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
 		File[] listOfFiles = folder.listFiles();
 		for (int i = 0; i < listOfFiles.length; i++) {
 		      if (listOfFiles[i].isFile()) {
@@ -193,6 +197,7 @@ public class UploadServlet extends HttpServlet {
 			}
 		}
 		*/
+    //	System.out.println("HI");
 		ArrayList <String> filenames = new ArrayList <String>();
 		String output = "";
 		String DataforSequence ="";
@@ -239,7 +244,7 @@ public class UploadServlet extends HttpServlet {
 	                   
 	                    // saves the file on disk
 	                    item.write(storeFile);
-	                    output = new Scanner(new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/upload/"+fileName)).useDelimiter("\\Z").next();
+	                    output = new Scanner(new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/upload/"+fileName)).useDelimiter("\\Z").next();
 	                    
 	                }else{
 	                	String fieldname = item.getFieldName();
@@ -261,9 +266,29 @@ public class UploadServlet extends HttpServlet {
 	      ArrayList <Double> x_axis = new ArrayList<Double>();
 	      ArrayList <Double> y_axis = new ArrayList<Double>();
 	    
-	     output = output.replaceAll("[\\t\\n\\r\\s]","" );
-	   //  System.out.println(output);
-	     
+          output = output.replaceAll("[\\t\\n\\r\\s]","-" );
+          output = output.replaceAll("--", "-");
+       //   System.out.println(output);
+        //  System.out.println(output);
+          String [] temp;
+          String delimiter="-";
+          temp = output.split(delimiter);
+          
+          for(int i=0; i<temp.length; i++){
+        	  
+        	  if( (i+1) %2==0){
+        		  y_axis.add(     Double.parseDouble(temp[i]));
+        		//  System.out.println(i+": "+ Double.parseDouble(temp[i]));
+        	  }else{
+        	      x_axis.add(Double.parseDouble(temp[i]));
+        	  }
+          }
+         
+          
+          
+          
+      	     //  System.out.println(output);
+	     /*
 	       for(int i=0; i< output.length(); i++){
 	    	   
 	    	   if(output.charAt(i)=='X' || output.charAt(i)=='x') {
@@ -289,6 +314,11 @@ public class UploadServlet extends HttpServlet {
 	    		   }
 	    	   }
 	       }
+	       */
+	      
+	      
+	       
+	       
 	       double[] X_Axis = new double[x_axis.size()];
 		   double[] Y_Axis = new double[x_axis.size()];
 	       for(int i=0; i<x_axis.size(); i++){
@@ -327,7 +357,8 @@ public class UploadServlet extends HttpServlet {
 		
 		/* get all files name from folder */
 		ArrayList <String> images = new ArrayList<String>(); 
-		File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+		File folder = new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/loadimages");
+	//	File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
 		File[] listOfFiles = folder.listFiles();
 		for (int i = 0; i < listOfFiles.length; i++) {
 		      if (listOfFiles[i].isFile()) {
@@ -335,6 +366,7 @@ public class UploadServlet extends HttpServlet {
 		       
 		      } 
 		}
+		
 		if(images.size()==0){
 			images.add("No images in the system !!!");
 		}

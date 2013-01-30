@@ -38,10 +38,45 @@
 	 				</tr>
 	 			</table>
 	 		</form>
-	 		<br><a>Or import text file here:</a>
+	 		
+	 		
+	 		<br>
+	 		
+	 		
+	 		<table border="0" >
+	 		<tr>
+	 		<td>
+	 		<a>Or import text file here:</a>   
+	 		</td>
+	 		<td  style="text-align: right; width: 500px">
+	 		
+        	</td>
+        	</tr>
+	 		</table>
+	 		
+	 		
 	 		<form method="post" action="GlycanMass_ImportServlet"  enctype="multipart/form-data">
-	 			Select file to import: <input type="file" name="dataFile" id="fileChooser" /><br >
+	 			Select file to import: <input type="file" name="dataFile" id="fileChooser" />
+	 			<a href=".\upload\ExampleGlycanData123321.txt" target="_blank">Example data format</a><br>	
+	 			
+	 		<!--  
+	 			<a href="#" rel="tooltip"  data-placement="right" title="Example data format below:  <br />
+	 															         Glycan Number 1 <br />
+	 											 						 Hexose	5 
+	 																	  HexNAc	2
+																	      Deoxyhexose	
+																		  Pentose
+																		  NeuAc
+																		  NeuGc
+																		  Phosphate	
+												  						 Sulphate" ></a>
+	 		-->	
+	 		
+	 			
+	 			<br >
         		<br > <input class="btn btn-primary btn-medium" type="submit" value="Import" />
+        		
+	
 	 		</form>
 	 		
 	 	</div>
@@ -67,7 +102,7 @@
 	 					if(Number_of_glycans==0)break;%>
 	 					
 	 					<div class="span3">
-	 					<h2>Clycan_<%=index %></h2>
+	 					<h2>Glycan_<%=index %></h2>
 	 					<table >
 	 					   <tr>	
 	 					   	<td><a>Number of Hexose(Hex):</a></td><td> <input type="text"  style="width: 80px; height: 15px" name="Hexose" /></td>
@@ -103,6 +138,9 @@
 	 		<br><input class="btn btn-primary btn-medium" type="submit" value="Calculate"> 	
 	 	    </form>
 	 	<%} %>
+	 	<br>
+		<footer>
+        <p>&copy; Macquarie University 2012</p>
 	 </div>
 	 
 </body>

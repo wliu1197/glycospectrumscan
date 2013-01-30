@@ -122,7 +122,8 @@ public void Histograms(double [] x, double [] y) throws IOException{
 				
 		/* get filenames frome a folder */
 		ArrayList <String> images = new ArrayList<String>(); 
-		File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+		File folder = new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/loadimages");
+	//	File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
 		File[] listOfFiles = folder.listFiles();
 		for (int i = 0; i < listOfFiles.length; i++) {
 		      if (listOfFiles[i].isFile()) {
@@ -304,7 +305,7 @@ public void Histograms(double [] x, double [] y) throws IOException{
 		}
 		
 		for(int i=0; i< X_Axis.length; i++){
-			System.out.println(X_Axis[i]+" "+Y_Axis[i]);
+	//		System.out.println(X_Axis[i]+" "+Y_Axis[i]);
 		}
 		
 		
@@ -312,7 +313,8 @@ public void Histograms(double [] x, double [] y) throws IOException{
 		
 		/* get all files name from folder */
 		ArrayList <String> images = new ArrayList<String>(); 
-		File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
+		File folder = new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/loadimages");
+	//	File folder = new File("C:/Job/Milestones/glycoSpectrumScan/WebContent/loadimages");
 		File[] listOfFiles = folder.listFiles();
 		for (int i = 0; i < listOfFiles.length; i++) {
 		      if (listOfFiles[i].isFile()) {

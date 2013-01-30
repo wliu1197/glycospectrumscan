@@ -56,9 +56,18 @@
 					<td><a>Monoisotopic mass with Glycan</a></td> -->
 				</tr>
 				
-					<% for(int i=0; i<PM.ProteinSequenceSplit.size(); i++){%>
+					<%
+					String error= "Wrong input from protein sequence page";
+					for(int i=0; i<PM.ProteinSequenceSplit.size(); i++){%>
 				<tr>
+				
+					<% if(PM.ProteinSequenceSplit.get(i).equals("")){%>
+					  <td> <%=error %></td>
+						
+					<%}else{%>
+					
 					<td><%=PM.ProteinSequenceSplit.get(i) %></td>
+					<% }%>
 					<td><%=MC[i] %></td>
 					<td><%=PM.average_mass[i] %></td>
 					<td><%=PM.monoisotopic_mass[i] %></td>
@@ -96,7 +105,7 @@
 					<%} %>
 			</table>
 			
-			<a href=".\upload\Result.txt" target="_blank">Download new mass result for GlycoSequences</a><br>	<br>
+		<!--  <a href=".\upload\Result.txt" target="_blank">Download new mass result for GlycoSequences</a><br>	<br>-->	
 			<div align="right">
 			<a class="btn btn-small" href="GenerateImage.jsp"><i class="icon-circle-arrow-right "></i> Mass Spectrum </a><br>
 			</div>
@@ -105,7 +114,7 @@
 		
 		<div class="row">
 		<div class="span12">	
-		
+		<!--  
 		<% for(int i=0; i<gs_NM.size(); i++){ %>
 		
 			<a>Mass adding to: </a> <%=gs.glyco_sequence.get(i) %></a><br>
@@ -113,6 +122,7 @@
 				<%=gs.Combination.get(i).Combination.get(j)%> <a>Combination Average_mass </a><%=gs.Combination.get(i).a_mass[j] %>  <a>: New Monoisotopic mass:</a> <%=gs_NM.get(i).new_m_mass.get(j)%> <a>New Average mass:</a> <%=gs_NM.get(i).new_a_mass.get(j)%> <br> 
 			<%} %>
 		<%} %>
+		-->
 		</div>
 		
 	</div>

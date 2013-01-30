@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.sql.*;
 
 
+
 public class DatabaseMethods {
 
 	
@@ -145,17 +146,17 @@ public class DatabaseMethods {
 						
 			if(CompositionID != null){
 				for(int i=0; i<CompositionID.length; i++){ 
-					System.out.println(CompositionID[i]);
+			//		System.out.println(CompositionID[i]);
 				}
 				String [] structureID = getStructureID(CompositionID);
 				System.out.println("structure_id for mass "+mass+" are:");
 				
 				for(String s: structureID){
-					System.out.println(s);
+			//		System.out.println(s);
 				}
 			}else{
 				String [] structureID = {"null"};
-				System.out.println(structureID[0]);
+			//	System.out.println(structureID[0]);
 			}
 			
 		 }

@@ -39,6 +39,7 @@ public class GlycanMass_Calculate_Servlet extends HttpServlet {
 		return result;
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	//	System.out.println("HI");
 		String[] Hexose=request.getParameterValues("Hexose"); String[] Deoxyhexose=request.getParameterValues("Deoxyhexose");
 		String[] HexNAc=request.getParameterValues("HexNAc"); String[] Pentose=request.getParameterValues("Pentose");
 		String[] NeuAc=request.getParameterValues("NeuAc");	  String[] Phosphate=request.getParameterValues("Phosphate");
