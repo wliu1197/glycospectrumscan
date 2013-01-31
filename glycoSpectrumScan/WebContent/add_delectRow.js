@@ -2,6 +2,25 @@ function form_input_is_Float(input){
     return !isNaN(input)&&parseFloat(input)==input;
 }
 
+function testTheGlycanDirectInput(form){
+	for (var i = 0; i < form.elements.length; i++) {
+		if(form.elements[i].name=="Monoisotopic_Mass" || form.elements[i].name=="Average_Mass"  ){
+			if(form.elements[i].value==""){
+				alert("All the value must be filled"  );
+				return false
+			}
+			var letter = /^[0-9]+$/;
+			if(!form.elements[i].value.match(letter)  ){
+				alert("Can't have letter input for mass");
+				return false;
+			}
+		}
+	}
+	return true;
+	
+}
+
+
 function testIt(form) {
     for (var i = 0; i < form.elements.length; i++) {
         

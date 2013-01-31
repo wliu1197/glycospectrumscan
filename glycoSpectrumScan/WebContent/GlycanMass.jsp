@@ -8,7 +8,7 @@
 	 			<table id="Creat_table" border="0">
 	 				<tr>
 	 					<td>
-	 					<h1>Glycan Mass tool</h1><br>
+	 					<h1>Glycan Mass by composition</h1><br>
 	 					Select the number of glycans for mass calculating: 
 	 					<select  name="Nglycans" id="Nglycans" >
 	 						<option value="1">1</option>
@@ -138,7 +138,6 @@
 	 		<br><input class="btn btn-primary btn-medium" type="submit" value="Calculate"> 	
 	 	    </form>
 	 	<%} %>
-	 	<br>
 		<footer>
         <p>&copy; Macquarie University 2012</p>
 	 </div>

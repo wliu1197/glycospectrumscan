@@ -45,7 +45,6 @@
     <servlet-name>GlycanMass_Servlet</servlet-name>
     <servlet-class>glycoSpectrumScan.GlycanMass_Servlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>GlycanMass_Servlet</servlet-name>
     <url-pattern>/GlycanMass_Servlet</url-pattern>
@@ -60,7 +59,6 @@
     <servlet-name>GlycanMass_Calculate_Servlet</servlet-name>
     <url-pattern>/GlycanMass_Calculate_Servlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>GlycanMass_ImportServlet</display-name>
@@ -71,9 +69,6 @@
     <servlet-name>GlycanMass_ImportServlet</servlet-name>
     <url-pattern>/GlycanMass_ImportServlet</url-pattern>
   </servlet-mapping>
- 
-  
-  
   <servlet>
     <description></description>
     <display-name>DeleteImageSevlet</display-name>
@@ -144,6 +139,34 @@
     <servlet-name>ChargeStateServlet</servlet-name>
     <url-pattern>/ChargeStateServlet</url-pattern>
   </servlet-mapping>
-  
-  
+  <servlet>
+    <description></description>
+    <display-name>GlycanMassDirectlyInputServlet</display-name>
+    <servlet-name>GlycanMassDirectlyInputServlet</servlet-name>
+    <servlet-class>glycoSpectrumScan.GlycanMassDirectlyInputServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GlycanMassDirectlyInputServlet</servlet-name>
+    <url-pattern>/GlycanMassDirectlyInputServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GlycanMass_Directly_Servlet</display-name>
+    <servlet-name>GlycanMass_Directly_Servlet</servlet-name>
+    <servlet-class>glycoSpectrumScan.GlycanMass_Directly_Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GlycanMass_Directly_Servlet</servlet-name>
+    <url-pattern>/GlycanMass_Directly_Servlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GlycanMass_Directly_ImportServlet</display-name>
+    <servlet-name>GlycanMass_Directly_ImportServlet</servlet-name>
+    <servlet-class>glycoSpectrumScan.GlycanMass_Directly_ImportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GlycanMass_Directly_ImportServlet</servlet-name>
+    <url-pattern>/GlycanMass_Directly_ImportServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
