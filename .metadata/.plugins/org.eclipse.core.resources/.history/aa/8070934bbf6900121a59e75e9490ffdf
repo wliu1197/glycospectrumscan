@@ -1,0 +1,70 @@
+<%@ include file="Header.jsp" %>
+<body>
+	<%
+	
+	glyco_sequence gs = (glyco_sequence) request.getSession().getAttribute("gs");
+	LinkedList <NewMass_GS> gs_NM=(LinkedList <NewMass_GS>)request.getSession().getAttribute("gs_NM");
+	
+	%>
+ <div class="container">
+	 
+	 	<div class="hero-unit">
+	 	<h1>Mass Spectrum</h1><br><br>
+				
+				<p style="font-size:30px;"> <a>Upload data here:</a></p><br>	
+				<form method="post" action="UploadServlet" onsubmit="return testImportDataSet(this);" enctype="multipart/form-data">
+				        Select file to upload: <input type="file" name="dataFile"
+				            id="fileChooser" />
+				
+				<span class="tooltip1" onmouseover="tooltip1.pop(this, '#demo2_tip')">Example data format </span>	
+						  <div style="display:none;">
+            				<div id="demo2_tip">
+              				  <img src="img/mq-inline-rgb.jpg"  style="float:right;margin-left:12px;" alt="" />
+              				  <br /><br />
+              				 
+               					X:500.2	Y:0.9087 <br>
+								X:501.3	Y:0.916	 <br>
+								X:502	Y:0.3044 <br>	
+								X:503.2	Y:0.5576 <br>
+								X:504.2	Y:0.4596 <br>
+								X:504.5	Y:0.8734 <br>
+								X:504.8	Y:0.5746 <br>
+								X:505	Y:0.7446 <br>
+								X:505.4	Y:0.6329 <br>
+               					 <br>
+               					......
+            			  </div>
+        				</div>            
+				<br />
+				            
+				<a>Selected for Sequence:</a>
+				<select  name="SelectedSequence" id="SelectedSequence" >
+					<% for(int i=0; i<gs_NM.size(); i++){%>
+						 <option value=<%=gs.glyco_sequence.get(i) %>><%=gs.glyco_sequence.get(i)%></option>
+					
+					<%}%>
+				
+				</select>
+				       
+				        <br /> <input class="btn btn-primary btn-medium" type="submit" value="Upload" />
+				</form>
+				<br>
+			
+		</div>
+		<div class="row">
+		<div class="span12">	
+		<!--  
+		<% for(int i=0; i<gs_NM.size(); i++){ %>
+			<a>Mass adding to: </a> <%=gs.glyco_sequence.get(i) %></a><br>
+			<%for(int j=0; j<gs_NM.get(i).new_m_mass.size(); j++){ %>	
+				<%=gs.Combination.get(i).Combination.get(j)%> <a>: New Monoisotopic mass:</a> <%=gs_NM.get(i).new_m_mass.get(j)%> <a>New Average mass:</a> <%=gs_NM.get(i).new_a_mass.get(j)%> <br> 
+			<%} %>
+		<%} %>
+		-->
+		</div>
+		
+		</div>
+</div>			    
+
+</body>
+</html>

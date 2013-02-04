@@ -3,6 +3,8 @@ package GenerateImage;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.IOUtils;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
@@ -242,9 +245,18 @@ public class UploadServlet extends HttpServlet {
 	                    File storeFile = new File(filePath);
 	                    filenames.add(fileName);
 	                   
+	                    /*
+	                     * Without save to disk
+	                     */
+	                    InputStreamReader reader = new InputStreamReader(item.getInputStream());
+	                    StringWriter writer = new StringWriter();
+	                    IOUtils.copy(reader, writer);
+	                    output = writer.toString();
+	                    
+	                    
 	                    // saves the file on disk
-	                    item.write(storeFile);
-	                    output = new Scanner(new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/upload/"+fileName)).useDelimiter("\\Z").next();
+	                //    item.write(storeFile);
+	                  //  output = new Scanner(new File("C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/upload/"+fileName)).useDelimiter("\\Z").next();
 	                    
 	                }else{
 	                	String fieldname = item.getFieldName();

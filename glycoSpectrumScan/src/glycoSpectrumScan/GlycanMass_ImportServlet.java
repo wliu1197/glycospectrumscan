@@ -108,23 +108,24 @@ public class GlycanMass_ImportServlet extends HttpServlet {
 	                    /*
 	                     * Without save file to disk, read data directly. 
 	                     *
+	                     */
 	                    InputStreamReader reader = new InputStreamReader(item.getInputStream());
 	                    StringWriter writer = new StringWriter();
 	                    IOUtils.copy(reader, writer);
-	                    String theString = writer.toString();
-	                    System.out.println(theString);
+	                    output = writer.toString();
+	                  //  System.out.println(theString);
 	                   
-	                    ************************************************/
 	                    
 	                    
 	                    
-	                    String filePath = uploadPath + File.separator + fileName;
-	                    File storeFile = new File(filePath);
+	                    
+	                //    String filePath = uploadPath + File.separator + fileName;
+	               //     File storeFile = new File(filePath);
 	                   
 	                   
 	                    // saves the file on disk
-	                    item.write(storeFile);
-	                    output= new Scanner(new File(UPLOAD_DIRECTORY+"/"+fileName)).useDelimiter("\\Z").next();
+	                 //   item.write(storeFile);
+	                  //  output= new Scanner(new File(UPLOAD_DIRECTORY+"/"+fileName)).useDelimiter("\\Z").next();
 	                }
 	                
 	            }

@@ -1,0 +1,62 @@
+
+public class Combination2 {
+	
+
+        /**
+         * @param args
+         */
+        public static void printCombination(double[] nums, int[] counts,int count[], int
+        		startIndex, double totalAmont,int check){
+        		
+        		
+                if (startIndex == nums.length || totalAmont<=0.0001){
+                        //System.out.print("" + totalAmont + "=");
+                	
+                	for (int i=0; i<nums.length; i++){
+                        System.out.print("" + counts[i] + "*" + nums[i] + " + ");
+                        if(check ==1){
+                              	count[i]=counts[i];
+                        }             
+                	}
+                	check +=1;
+                	System.out.println(check);
+                        
+                	return ;
+                }else  if (startIndex == nums.length -1){
+                        if (totalAmont%nums[startIndex]==0){
+                                counts[startIndex] = (int) (totalAmont/nums[startIndex]);
+                                printCombination(nums, counts,count, startIndex+1,0,check);
+                                
+                        }
+                } else {
+                        for(int i =0; i<= (totalAmont/nums[startIndex]);i++){
+                                counts[startIndex] = i;
+                                printCombination(nums, counts,count, startIndex+1,totalAmont -
+                                		nums[startIndex]*i,check);
+                        }
+                }
+               
+				
+        }
+        public static void main(String[] args) {
+                // TODO Auto-generated method stub
+                double nums[] = {79.9799,80.0642,132.1161,146.1430,162.1424,203.1950,291.2579,307.2573};
+                int[] count = new int[nums.length];
+                int[] counts = new int[nums.length];
+                double totalnumbers[] ={1217.102,1379.2444,1445.3502,1461.3496,1502.4022,1541.3868,1549.4125,1623.492,1648.5452,1664.5446};
+           
+                
+                printCombination(nums, counts,count,0,1217.10201,1);
+                for (int i=0; i<nums.length; i++){
+                    System.out.print("" + count[i] + "*" + nums[i] + " + ");
+                }
+                System.out.println("");
+                
+                /*
+                for(double d : totalnumbers){
+                printCombination(nums, counts,0,d);
+               }
+               */
+       }
+
+}

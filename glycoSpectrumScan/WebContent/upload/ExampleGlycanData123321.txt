@@ -1,0 +1,29 @@
+Clycan Number 1
+Hexose	5
+HexNAc	2
+Deoxyhexose	
+Pentose
+NeuAc
+NeuGc
+Phosphate	
+Sulphate	
+
+Clycan Number 2
+Hexose	6
+HexNAc	2
+Deoxyhexose	
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate	
+
+Clycan Number 3
+Hexose	3
+HexNAc	4
+Deoxyhexose	1
+Pentose	
+NeuAc	
+NeuGc	
+Phosphate	
+Sulphate

@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+C:\Users\wenhao\git\glyco\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3230442452.index
+\glycoSpectrumScan\src
+C:\Users\wenhao\git\glyco\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1415230656.index
+\glycoSpectrumScan\src

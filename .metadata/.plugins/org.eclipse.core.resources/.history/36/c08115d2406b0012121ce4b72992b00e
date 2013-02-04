@@ -1,0 +1,123 @@
+<%@ include file="Header.jsp" %>
+<body>
+				<% 
+				
+				if(request.getAttribute("glycanss")!=null){
+					ArrayList <glycans> gs  = (ArrayList <glycans>)request.getAttribute("glycanss");
+				%>
+				
+			  <%} else{%>
+						
+ 		<div class="container">
+ 	
+ 			<div class="hero-unit">
+ 	<%} %>
+ 				<a href="#" rel="tooltip"  data-placement="right" title="All whitespace, and  all characters different from letters are ignored" >Please read me first</a>
+					<script>
+	 					$('[rel="tooltip"]').tooltip('toggle');
+	 					$('[rel="tooltip"]').tooltip('hide');
+	 	
+	 		
+			
+					</script>							  						 
+						
+	
+	<form action="ProteinSequence_Servlet" onsubmit="return CheckProteinSequenceInput(this);" method="post" name="TableForm">
+			<table id="Creat_table" border="0">
+				<tr>
+					<td> 
+					<h1> PeptideMass</h1>
+						<a>Protein Sequence: </a> <p> </p><textarea id="ProteinSequence" name="ProteinSequence" style="height:200px;width:350px;" cols="40" rows="5"></textarea> </br>
+						
+						<a>with cysteines treated with: </a>
+						<select  name="Treat" id="Treat" >
+							<option value="Nothing">Nothing</option>
+							<option value="Lodoacetamid">Lodoacetamid</option>
+						</select><br>
+						<a> Enzyme: </a> 
+						<select  name="Enzyme" id="Enzyme" >
+					            <option value="Trypsin">Trypsin</option>
+					            <option value="Trypsin_evenP">Trypsin (C-term to K/R, even before P)</option>
+					            <option value="TrypsinH">Trypsin (higher specificity)</option>
+					            <option value="Proteinase_K">Proteinase K</option>
+					            <option value="LYS_C">Lys C</option>
+					            <option value="LYS_N">Lys N</option>
+					            <option value="CNBR">CNBr</option>
+					            <option value="ARG_C">Arg C</option>
+					            <option value="ASPN">Asp N</option>
+					            <option value="ASPN_LYSC">Asp N / Lys C</option>
+					            <option value="ASPN_NTERMINA_GLU">Asp N + N-terminal Glu</option>
+					            <option value="ASPN_GLUC">Asp N / Glu C (bicarbonate)</option>
+					            <option value="GLU_C_BICARBONATE">Glu C (bicarbonate)</option>
+					            <option value="GLU_C_P">Glu C (phosphate)</option>
+					            <option value="GLU_C_P_LYS_C">Glu C (phosphate) + Lys C</option> 
+					            <option value="MICROWAVE_A_F_A_H">Microwave-assisted formic acid hydrolysis (C-term to D)</option>
+					            <option value="CHYMOTRYPSIN">Chymotrypsin (C-term to F/Y/W/M/L, not before P, not after Y if P is C-term to Y)</option>
+					            <option	value="CHYMOTRYPSIN_FYW">Chymotrypsin (C-term to F/Y/W/, not before P, not after Y if P is C-term to Y)</option>
+					            <option	value="TRYPSIN_CHYMOTRYPSIN">Trypsin/Chymotrypsin (C-term to K/R/F/Y/W, not before P, not after Y if P is C-term to Y)</option>
+					            <option	value="PEPSIN">Pepsin (pH 1.3)</option>
+					            <option value="PEPSIN_PH_2">Pepsin (pH > 2)</option>
+					            <option value="THERMOLYSIN">Thermolysin</option>
+					    </select>
+					    <br>
+					    <a> Method: </a>
+					    <select  name="Method" id="Method" >
+					            <option value="M+H">[M+H]^+</option>
+					            <option value="M"> [M]</option>
+					            <option value="M-H"> [M-H]^-</option>
+					            <option value="M+2H"> [M+2H]^2+</option>
+					            <option value="M+3H"> [M+3H]^3+</option>
+					    </select>
+					    <br>
+					    <a>Allow for </a> <select  name="missed_cleavages" id="missed_cleavages" >
+					            <option value="0">0</option>
+					            <option value="1">1</option>
+					            <option value="2">2</option>
+					            <option value="3">3</option>
+					            <option value="4">4</option>
+					            <option value="5">5</option>
+					    </select><a>missed cleavages.</a><br>
+					    
+					    <br>
+					    <%if(request.getAttribute("glycanss")!=null){ 
+					    ArrayList <glycans> gs  = (ArrayList <glycans>)request.getAttribute("glycanss");
+					   
+					    double total_monoisotopic_mass= new Double(request.getAttribute("total_monoisotopic_mass").toString());
+						double total_average_mass= new Double(request.getAttribute("total_average_mass").toString());
+					   
+					    %>
+					    <a>Number of glycans (n): </a>  <%=gs.size()%> <input type="hidden" name="glycans" value=<%=gs.size()%>> 
+					    <input type="hidden" name="total_monoisotopic_mass" value=<%=total_monoisotopic_mass%>> 
+					    <input type="hidden" name="total_average_mass" value=<%=total_average_mass%>> 
+					    	<% for(int i=0; i<gs.size(); i++){%>
+					    		 <input type="hidden" name="gs_monoisotopic_mass" value=<%=gs.get(i).Monoisotopic_Mass%> > 
+					    	     <input type="hidden" name="gs_average_mass" value=<%= gs.get(i).Average_Mass%>  >
+					    		
+					    	<% }%>
+						    
+					    <%}else{ %>
+					    <a>Number of glycans (n): </a>  <input type="text" name="glycans" />
+					    <input type="hidden" name="total_monoisotopic_mass" > 
+					    <input type="hidden" name="total_average_mass" > 
+					    <%} %>
+					    
+					    <br><input class="btn btn-primary btn-small" type="submit" value="Submit"><br>
+					    <br><br>
+					    <a class="btn btn-small" href="GlycanMass.jsp"><i class="icon-circle-arrow-left "></i> Back </a><br>
+				   </td>
+				</tr>
+			</table>
+			
+	</form>
+	</div>
+	<footer>
+        <p>&copy; Macquarie University 2012</p>
+	</footer>
+</div>
+
+
+<script type="text/javascript">
+$('.some-class').tooltip({ selector: "a" });
+</script>
+</body>
+</html>
