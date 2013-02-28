@@ -1,0 +1,7 @@
+analyzer                Access the metadata from an 'mzR' object.
+mzR-class               Class 'mzR' and sub-classes
+mzR-package             parser for mzXML, mzData and mzML files (mass
+                        spectrometry data)
+openMSfile              Create and check mzR objects from netCDF,
+                        mzXML, mzData or mzML files.
+peaks                   Access the raw data from an 'mzR' object.

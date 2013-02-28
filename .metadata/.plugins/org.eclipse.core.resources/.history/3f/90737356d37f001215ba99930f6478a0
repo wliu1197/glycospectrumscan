@@ -1,0 +1,34 @@
+\documentclass[10pt]{article}
+%\VignetteIndexEntry{Rcpp-unitTests}
+\usepackage{vmargin}
+\setmargrb{0.75in}{0.75in}{0.75in}{0.75in}
+
+\RequirePackage{ae,mathpple}    % ae as a default font pkg works with Sweave
+\RequirePackage[T1]{fontenc}
+
+<<echo=FALSE,print=FALSE>>=
+require( Rcpp )
+prettyVersion <- packageDescription("Rcpp")$Version
+prettyDate <- format(Sys.Date(), "%B %e, %Y")
+@
+
+\usepackage[colorlinks]{hyperref}
+\author{Dirk Eddelbuettel \and Romain Fran\c{c}ois}
+\title{\texttt{Rcpp}: Unit testing results}
+\date{\texttt{Rcpp} version \Sexpr{prettyVersion} as of \Sexpr{prettyDate}}
+
+\begin{document}
+\maketitle
+
+\begin{verbatim}
+<<echo=F,results=tex>>=
+results <- "unitTests-results/Rcpp-unitTests.txt"
+if( file.exists( results ) ){
+	writeLines( readLines( results ) )
+} else{
+	writeLines( "unit test results not available" )
+}
+@
+\end{verbatim}
+
+\end{document}

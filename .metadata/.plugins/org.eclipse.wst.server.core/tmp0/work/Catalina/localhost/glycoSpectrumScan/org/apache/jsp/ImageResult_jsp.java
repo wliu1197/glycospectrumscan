@@ -80,14 +80,19 @@ public final class ImageResult_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<link href=\"css/bootstrap-responsive.css\" media=\"screen\" type=\"text/css\" rel=\"stylesheet\">\r\n");
       out.write("<link href=\"css/stylesnewlayout.css\" media=\"screen\" type=\"text/css\" rel=\"stylesheet\">\r\n");
       out.write("<link href=\"css/bootstrapnewlayout.css\" media=\"screen\" type=\"text/css\" rel=\"stylesheet\">\r\n");
-      out.write("\r\n");
+      out.write("<link href=\"css/bootstrap.css\" media=\"screen\" type=\"text/css\" rel=\"stylesheet\">\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write(" <style type=\"text/css\">\r\n");
-      out.write(" \r\n");
-      out.write("\r\n");
+      out.write("  \r\n");
+      out.write("\timg.bg {\r\n");
+      out.write("\t    width: 30%;\r\n");
+      out.write("\t    }\r\n");
       out.write("      body {\r\n");
-      out.write("      \t\r\n");
+      out.write("      \r\n");
+      out.write("      \tbackground: url(\"img/background7.jpg\") no-repeat;\r\n");
+      out.write("\t\tbackground-size: 100%;\r\n");
+      out.write("      \r\n");
       out.write("        padding-top: 60px;\r\n");
       out.write("        padding-bottom: 40px;\r\n");
       out.write("     \r\n");
@@ -107,19 +112,12 @@ public final class ImageResult_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  \r\n");
       out.write("        <ul class=\"nav\">\r\n");
       out.write("          <li class=\"active\"><a href=\"GlycanMass.jsp\"><i class=\"icon-home icon-white\"></i>Home</a></li>\r\n");
-      out.write("\t\t<!--  <li><a href=\"GlycanMass.jsp\">GlycanMass</a></li> --> \r\n");
-      out.write("\t\t  <li><a href=\"ProteinSequence.jsp\">PeptideMass</a></li>\r\n");
+      out.write("\t\t  <li><a href=\"GlycanMass.jsp\">GlycanMass</a></li> \r\n");
+      out.write("\t\t  <li><a href=\"ProteinSequence.jsp\">PeptideMass</a></li> \r\n");
+      out.write("\t\t  \r\n");
       out.write("\t\t</ul>\r\n");
       out.write("\t\t\r\n");
-      out.write("\t\t<ul class=\"nav pull-right\" >\r\n");
-      out.write("\t        \t   <li class=\"dropdown\">\r\n");
-      out.write("\t        \t   \t<a href =\"#\"  data-toggle=\"dropdown\">GlycanMass<b class=\"caret\"></b></a>\t\r\n");
-      out.write("\t        \t\t <ul class=\"dropdown-menu\">\r\n");
-      out.write("\t        \t\t\t<li><a href=\"GlycanMass.jsp\">By glycan composition\t</a></li>\r\n");
-      out.write("\t        \t\t\t<li><a href=\"DirectlyInputGlycanMass.jsp\">Directly input mass\t</a></li>\r\n");
-      out.write("\t        \t\t </ul>\r\n");
-      out.write("\t        \t   </li>\t\r\n");
-      out.write("\t    </ul>\r\n");
+      out.write("\t\t\r\n");
       out.write("\t\t\r\n");
       out.write("\t\t<div id=\"headersearch\" class=\"pull-right\">\r\n");
       out.write("\t\t<ul>\r\n");
@@ -151,7 +149,7 @@ public final class ImageResult_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\t<a name=top></a>\r\n");
       out.write("\t<div class=\"container\">\r\n");
-      out.write("\t \r\n");
+      out.write("\t <div align=\"left\"><img src=\"img/logo.png\" class=\"bg\"></div>\r\n");
       out.write("\t \t<div class=\"hero-unit\">\r\n");
       out.write("\t \t\t<h1>Generate Mass Spectrum</h1><br>\r\n");
       out.write("\t");
@@ -382,7 +380,7 @@ if(request.getAttribute("ChargeState")!=null){
       out.write("\t\t\t\t\t <a class=\"btn btn-small\" href='#Bottom'><i class=\"icon-arrow-down\"> </i>Go Bottom</a>\r\n");
       out.write("\t\t\t\t\t\r\n");
       out.write("\t\t\t\t\t<p align=\"center\" style=\"font-size:30px;\"> <a>Result</a>\t\r\n");
-      out.write("\t\t\t\t\t<table align=\"center\" id=\"Creat_table\" border=\"1\" cellpadding=\"10\">\r\n");
+      out.write("\t\t\t\t\t<table class=\"table table-striped\" align=\"center\" id=\"Creat_table\" border=\"1\" cellpadding=\"10\">\r\n");
       out.write("\t\t\t\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>Glyco Sequence</td>\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>Combination</td>\r\n");
@@ -398,7 +396,10 @@ if(request.getAttribute("ChargeState")!=null){
       out.write("\t\t\t\t\t\t\t</tr>\r\n");
       out.write("\t\t\t\t\t\r\n");
       out.write("\t\t\t\t\t");
-for(int i=0;i<glyco_sequence.size();i++) {
+
+					
+					DecimalFormat df = new DecimalFormat("#.##");
+					for(int i=0;i<glyco_sequence.size();i++) {
       out.write("\r\n");
       out.write("\t\t\t\t\t\t\r\n");
       out.write("\t\t\t\t\t\t\t<tr>\r\n");
@@ -478,9 +479,11 @@ for(int i=0;i<glyco_sequence.size();i++) {
 							    if(glyc[7]!=0) compositions += Integer.toString(glyc[7]) +"-"+"Sulphate <br>";
 							    
 							    
-								
-								
-								
+							    String MM = df.format(m_mass.get(i));
+							    String AM = df.format(a_mass.get(i));
+							    String XA = df.format(for_X_axis.get(i));
+							    String YA = df.format(for_Y_axis.get(i));
+								String NV = df.format(new_value.get(i));
 								
 								
       out.write("\r\n");
@@ -492,10 +495,10 @@ for(int i=0;i<glyco_sequence.size();i++) {
       out.write("\t\t\t\t\t\t\t\t\r\n");
       out.write("\t\t\t\t\t\t\t\t\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>");
-      out.print(m_mass.get(i) );
+      out.print(MM );
       out.write("</td>\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>");
-      out.print(a_mass.get(i) );
+      out.print(AM );
       out.write("</td>\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>");
       out.print(for_X_axis.get(i) );
@@ -504,7 +507,7 @@ for(int i=0;i<glyco_sequence.size();i++) {
       out.print(for_Y_axis.get(i) );
       out.write("\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>");
-      out.print(new_value.get(i) );
+      out.print(NV );
       out.write("</td>\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>(+/-)");
       out.print(Ranges );
@@ -597,45 +600,11 @@ for(double d: for_X_axis_y_less_2) {
       out.write("\t");
 } 
       out.write("\r\n");
-      out.write("\t<!-- \r\n");
-      out.write("\t<a>Charge state:</a>");
-      out.print(chargestateZ );
-      out.write("\t<br>\r\n");
-      out.write("\t<a>Range:</a>");
-      out.print(Ranges );
-      out.write("\r\n");
-      out.write("\t\t -->\r\n");
+      out.write("\t\r\n");
       out.write("\t");
 }
       out.write("<br>\r\n");
-      out.write("\t <!--  \r\n");
-      out.write("\t");
- for(int i=0; i<gs_NM.size(); i++){ 
-      out.write("\r\n");
-      out.write("\t\t<a>Mass adding to: </a> ");
-      out.print(gs.glyco_sequence.get(i) );
-      out.write("</a><br>\r\n");
-      out.write("\t\t");
-for(int j=0; j<gs_NM.get(i).new_m_mass.size(); j++){ 
-      out.write("\t\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t");
-      out.print(gs.Combination.get(i).Combination.get(j));
-      out.write(" <a>Combination Average_mass </a>");
-      out.print(gs.Combination.get(i).a_mass[j] );
-      out.write("   <a>: New Monoisotopic mass:</a> ");
-      out.print(gs_NM.get(i).new_m_mass.get(j));
-      out.write(" <a>New Average mass:</a> ");
-      out.print(gs_NM.get(i).new_a_mass.get(j));
-      out.write(" <br> \r\n");
-      out.write("\t\t");
-} 
-      out.write('\r');
-      out.write('\n');
-      out.write('	');
-} 
-      out.write("\r\n");
-      out.write("\t-->\r\n");
+      out.write("\t \r\n");
       out.write("\t<br>\r\n");
       out.write("\t\t<footer>\r\n");
       out.write("        <p>&copy; Macquarie University 2012</p>\r\n");

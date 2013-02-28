@@ -1,0 +1,56 @@
+package GenerateImage;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.rosuda.JRI.REXP;
+import org.rosuda.JRI.Rengine;
+
+/**
+ * Servlet implementation class UploadMzxmlServlet
+ */
+public class UploadMzxmlServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UploadMzxmlServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			Rengine re=new Rengine (new String [] {"--vanilla"}, false, null);
+			
+			re.eval("source('http://bioconductor.org/biocLite.R')");
+	        re.eval("biocLite('mzR')");
+	        re.eval("source('http://bioconductor.org/biocLite.R')");
+	        re.eval("biocLite('msdata')");
+			
+			REXP x;
+			re.eval("library(msdata)");
+		    re.eval("library(mzR)");
+	        re.eval("mzxml <- system.file('threonine/testDataSet.mzXML',package = 'msdata')");
+	        re.eval("aa <- openMSfile(mzxml)") ;
+	        re.eval("pl <- peaks(aa,10)");
+	        re.eval("peaksCount(aa,10)");
+	        
+	        
+	        System.out.println(x=re.eval("head(pl)"));
+	        
+	        
+	        double matrix [][] =x.asMatrix();
+	        for(int i=0; i<matrix.length; i++){
+	        	 for(int j=0; j<matrix[i].length; j++){
+	 	        	System.out.println(matrix[i][j]);
+	 	        }
+	        }
+	        re.end();
+	}
+
+}

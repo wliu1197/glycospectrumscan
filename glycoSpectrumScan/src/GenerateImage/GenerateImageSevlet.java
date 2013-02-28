@@ -104,9 +104,9 @@ public void Histograms(double [] x, double [] y) throws IOException{
 		
 		JFreeChart chart = ChartFactory.createXYBarChart(
 				"Mass Spectrum", // chart title
-				"X-axis", // domain axis label
+				"Mass(m/z)", // domain axis label
 				false, 
-				 "Y-axis", // range axis label
+				 "Intensity", // range axis label
 				dataset, // data
 				PlotOrientation.VERTICAL, // orientation
 				true, // include legend

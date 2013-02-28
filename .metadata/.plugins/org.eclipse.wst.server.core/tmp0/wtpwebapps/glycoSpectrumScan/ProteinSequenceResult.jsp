@@ -1,6 +1,7 @@
 <%@ include file="Header.jsp" %>
 <body>
 	<div class="container">
+	<div align="left"><img src="img/logo.png" class="bg"></div>
 		<div class="hero-unit">
 			<%
 				PeptideMass PM = (PeptideMass)request.getAttribute("PeptideMass");
@@ -44,9 +45,18 @@
 				<a>Total glycan average mass is:</a><%=total_average_mass %><br>
 			 -->	
 			
-			<a>Theoretical pI: 3.42 / Mw (average mass): </a><%=PM.total_average_mass %>
-			<a> / Mw (monoisotopic mass): </a><%=PM.total_monoisotopic_mass %><br>
-			<table id="table" border="1" width="100%">
+			
+			<% 
+				DecimalFormat df = new DecimalFormat("#.##");
+				String AMm = df.format(PM.total_average_mass);
+				String MMm = df.format(PM.total_monoisotopic_mass);
+			
+			%>
+			<a>Theoretical pI: 3.42 / Mw (average mass): </a><%=AMm %>
+			<a> / Mw (monoisotopic mass): </a><%=MMm %><br>
+			
+			
+			<table class="table table-striped" id="table" border="1" width="100%">
 				<tr>
 					<td><a>peptide sequence</a></td>
 					<td><a>#MC</a></td>
@@ -58,7 +68,14 @@
 				
 					<%
 					String error= "Wrong input from protein sequence page";
-					for(int i=0; i<PM.ProteinSequenceSplit.size(); i++){%>
+					for(int i=0; i<PM.ProteinSequenceSplit.size(); i++){
+					
+					
+					String AM = df.format(PM.average_mass[i]);
+					String MM = df.format(PM.monoisotopic_mass[i]);
+					
+					
+					%>
 				<tr>
 				
 					<% if(PM.ProteinSequenceSplit.get(i).equals("")){%>
@@ -69,8 +86,8 @@
 					<td><%=PM.ProteinSequenceSplit.get(i) %></td>
 					<% }%>
 					<td><%=MC[i] %></td>
-					<td><%=PM.average_mass[i] %></td>
-					<td><%=PM.monoisotopic_mass[i] %></td>
+					<td><%=AM %></td>
+					<td><%=MM %></td>
 				
 			<!--  	<%
 						int check = 0;

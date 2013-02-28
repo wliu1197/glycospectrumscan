@@ -80,14 +80,19 @@ public final class ProteinSequence_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("<link href=\"css/bootstrap-responsive.css\" media=\"screen\" type=\"text/css\" rel=\"stylesheet\">\r\n");
       out.write("<link href=\"css/stylesnewlayout.css\" media=\"screen\" type=\"text/css\" rel=\"stylesheet\">\r\n");
       out.write("<link href=\"css/bootstrapnewlayout.css\" media=\"screen\" type=\"text/css\" rel=\"stylesheet\">\r\n");
-      out.write("\r\n");
+      out.write("<link href=\"css/bootstrap.css\" media=\"screen\" type=\"text/css\" rel=\"stylesheet\">\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write(" <style type=\"text/css\">\r\n");
-      out.write(" \r\n");
-      out.write("\r\n");
+      out.write("  \r\n");
+      out.write("\timg.bg {\r\n");
+      out.write("\t    width: 30%;\r\n");
+      out.write("\t    }\r\n");
       out.write("      body {\r\n");
-      out.write("      \t\r\n");
+      out.write("      \r\n");
+      out.write("      \tbackground: url(\"img/background7.jpg\") no-repeat;\r\n");
+      out.write("\t\tbackground-size: 100%;\r\n");
+      out.write("      \r\n");
       out.write("        padding-top: 60px;\r\n");
       out.write("        padding-bottom: 40px;\r\n");
       out.write("     \r\n");
@@ -107,19 +112,12 @@ public final class ProteinSequence_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("  \r\n");
       out.write("        <ul class=\"nav\">\r\n");
       out.write("          <li class=\"active\"><a href=\"GlycanMass.jsp\"><i class=\"icon-home icon-white\"></i>Home</a></li>\r\n");
-      out.write("\t\t<!--  <li><a href=\"GlycanMass.jsp\">GlycanMass</a></li> --> \r\n");
-      out.write("\t\t  <li><a href=\"ProteinSequence.jsp\">PeptideMass</a></li>\r\n");
+      out.write("\t\t  <li><a href=\"GlycanMass.jsp\">GlycanMass</a></li> \r\n");
+      out.write("\t\t  <li><a href=\"ProteinSequence.jsp\">PeptideMass</a></li> \r\n");
+      out.write("\t\t  \r\n");
       out.write("\t\t</ul>\r\n");
       out.write("\t\t\r\n");
-      out.write("\t\t<ul class=\"nav pull-right\" >\r\n");
-      out.write("\t        \t   <li class=\"dropdown\">\r\n");
-      out.write("\t        \t   \t<a href =\"#\"  data-toggle=\"dropdown\">GlycanMass<b class=\"caret\"></b></a>\t\r\n");
-      out.write("\t        \t\t <ul class=\"dropdown-menu\">\r\n");
-      out.write("\t        \t\t\t<li><a href=\"GlycanMass.jsp\">By glycan composition\t</a></li>\r\n");
-      out.write("\t        \t\t\t<li><a href=\"DirectlyInputGlycanMass.jsp\">Directly input mass\t</a></li>\r\n");
-      out.write("\t        \t\t </ul>\r\n");
-      out.write("\t        \t   </li>\t\r\n");
-      out.write("\t    </ul>\r\n");
+      out.write("\t\t\r\n");
       out.write("\t\t\r\n");
       out.write("\t\t<div id=\"headersearch\" class=\"pull-right\">\r\n");
       out.write("\t\t<ul>\r\n");
@@ -138,6 +136,7 @@ public final class ProteinSequence_jsp extends org.apache.jasper.runtime.HttpJsp
  
 				
 				if(request.getAttribute("glycanss")!=null){
+					
 					ArrayList <glycans> gs  = (ArrayList <glycans>)request.getAttribute("glycanss");
 				
       out.write("\r\n");
@@ -167,7 +166,7 @@ public final class ProteinSequence_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t<td> \r\n");
       out.write("\t\t\t\t\t<h1> PeptideMass</h1>\r\n");
-      out.write("\t\t\t\t\t\t<a>Protein Sequence: </a> <p> </p><textarea id=\"ProteinSequence\" name=\"ProteinSequence\" style=\"height:200px;width:350px;\" cols=\"40\" rows=\"5\"></textarea> </br>\r\n");
+      out.write("\t\t\t\t\t\t<a>Protein Sequence: Enter a protein sequence or  accession number (e.g: P04406) </a> <p> </p><textarea id=\"ProteinSequence\" name=\"ProteinSequence\" style=\"height:200px;width:350px;\" cols=\"40\" rows=\"5\"></textarea> </br>\r\n");
       out.write("\t\t\t\t\t\t\r\n");
       out.write("\t\t\t\t\t\t<a>with cysteines treated with: </a>\r\n");
       out.write("\t\t\t\t\t\t<select  name=\"Treat\" id=\"Treat\" >\r\n");

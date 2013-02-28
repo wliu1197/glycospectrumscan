@@ -7,19 +7,24 @@
 	
 	%>
  <div class="container">
-	 
+	 <div align="left"><img src="img/logo.png" class="bg"></div>
 	 	<div class="hero-unit">
 	 	<h1>Mass Spectrum</h1><br><br>
 				
-				<p style="font-size:30px;"> <a>Upload data here:</a></p><br><br>	
+			<!--  	<p style="font-size:30px;"> <a>Upload data here:</a></p><br><br>	-->
+				<h3>Upload by Text file</h3>
 				<form method="post" action="UploadServlet" onsubmit="return testImportDataSet(this);" enctype="multipart/form-data">
 				        Select file to upload: <input type="file" name="dataFile"
 				            id="fileChooser" />
-				
+				<br>
+				<br>
 				<a href=".\upload\ExampleChartData123321.txt" target="_blank">Example data format</a>   
-				<br />
-				<br><br>   
-				<a>Selected for Sequence:</a>
+				
+				<br>  
+				
+				
+				
+				Selected for Sequence:
 				<select  name="SelectedSequence" id="SelectedSequence" >
 					<% for(int i=0; i<gs_NM.size(); i++){%>
 						 <option value=<%=gs.glyco_sequence.get(i) %>><%=gs.glyco_sequence.get(i)%></option>
@@ -28,8 +33,29 @@
 				
 				</select>
 				       
-				        <br /> <input class="btn btn-primary btn-medium" type="submit" value="Upload" />
+				        <input class="btn btn-primary btn-medium" type="submit" value="Upload" />
 				</form>
+				
+				<h3>Upload by Mzxml</h3><br>
+				
+				<form method="post" action="UploadMzxmlServlet" onsubmit="return testImportDataSet(this);" enctype="multipart/form-data">
+				        Select file to upload: <input type="file" name="dataFile"
+				            id="fileChooser" />
+				<br>
+				
+				
+				Selected for Sequence:
+				<select  name="SelectedSequence" id="SelectedSequence" >
+					<% for(int i=0; i<gs_NM.size(); i++){%>
+						 <option value=<%=gs.glyco_sequence.get(i) %>><%=gs.glyco_sequence.get(i)%></option>
+					
+					<%}%>
+				
+				</select>
+				       
+				        <input class="btn btn-primary btn-medium" type="submit" value="Upload" />
+				</form>
+				</p>
 				<br>
 			
 		</div>

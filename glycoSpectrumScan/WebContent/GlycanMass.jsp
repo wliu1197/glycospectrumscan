@@ -1,10 +1,25 @@
 <%@ include file="Header.jsp" %>
+
+
 <body>
-	 <div class="container">
-	 
+
+		
+		
+		
+	 	<div class="container">
+	 	
+		<div align="left"><img src="img/logo.png" class="bg"></div> 
+	 	<ul class= "nav nav-tabs ">
+				<li  class="active" ><a  href="GlycanMass.jsp">Glycan composition mass</a></li>
+				<li><a   href="DirectlyInputGlycanMass.jsp">Directly input glycan mass</a></li>
+			
+		
+		</ul>
+	 	
+	  
 	 	<div class="hero-unit">
 	 		
-	 		<form action="GlycanMass_Servlet" method="post" name="TableForm" >
+	 		<form  action="GlycanMass_Servlet" method="post" name="TableForm" >
 	 			<table id="Creat_table" border="0">
 	 				<tr>
 	 					<td>
@@ -32,10 +47,12 @@
 	 						<option value="19">19</option>
 	 						<option value="20">20</option>
 	 					</select>
-	 					<br>
-	 					<br><input class="btn btn-primary btn-medium" type="submit" value="Submit">
+	 					
+	 					<input class="btn btn-primary btn-medium" type="submit" value="Submit">
 	 					</td>
+	 					
 	 				</tr>
+	 				
 	 			</table>
 	 		</form>
 	 		
@@ -46,7 +63,7 @@
 	 		<table border="0" >
 	 		<tr>
 	 		<td>
-	 		<a>Or import text file here:</a>   
+	 		
 	 		</td>
 	 		<td  style="text-align: right; width: 500px">
 	 		
@@ -57,6 +74,9 @@
 	 		
 	 		<form method="post" action="GlycanMass_ImportServlet"  enctype="multipart/form-data">
 	 			Select file to import: <input type="file" name="dataFile" id="fileChooser" />
+	 			<input class="btn btn-primary btn-medium" type="submit" value="Import" />
+	 			<br>
+	 			<br>
 	 			<a href=".\upload\ExampleGlycanData123321.txt" target="_blank">Example data format</a><br>	
 	 			
 	 		<!--  
@@ -73,9 +93,7 @@
 	 		-->	
 	 		
 	 			
-	 			<br >
-        		<br > <input class="btn btn-primary btn-medium" type="submit" value="Import" />
-        		
+	 			
 	
 	 		</form>
 	 		
@@ -138,6 +156,8 @@
 	 		<br><input class="btn btn-primary btn-medium" type="submit" value="Calculate"> 	
 	 	    </form>
 	 	<%} %>
+	 	
+	
 		<footer>
         <p>&copy; Macquarie University 2012</p>
 	 </div>

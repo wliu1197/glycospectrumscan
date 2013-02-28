@@ -1,0 +1,31 @@
+.DollarNames-methods    completion
+C++Class-class          Reflection information for an internal c++
+                        class
+C++ClassRepresentation-class
+                        Class "C++ClassRepresentation"
+C++Constructor-class    Class "C++Constructor"
+C++Field-class          Class "C++Field"
+C++Function-class       Class "C++Function"
+C++Object-class         c++ internal objects
+C++ObjectS3-class       Class "C++ObjectS3"
+C++OverloadedMethods-class
+                        Class "C++OverloadedMethods"
+Module                  Retrieves an Rcpp module
+Module-class            Rcpp modules
+Rcpp-package            R / C++ interface
+Rcpp.package.skeleton   Create a skeleton for a new package depending
+                        on Rcpp
+RcppUnitTests           Rcpp : unit tests results
+compileAttributes       Compile Rcpp Attributes for a Package
+cppFunction             Define an R Function with a C++ Implementation
+dependsAttribute        Rcpp::depends Attribute
+evalCpp                 Evaluate a C++ Expression
+exportAttribute         Rcpp::export Attribute
+formals<--methods       Set the formal arguments of a C++ function
+interfacesAttribute     Rcpp::interfaces Attribute
+loadModule              Load an Rcpp Module into a Package
+loadRcppModules         Loads Rcpp modules on package startup
+populate                Populates a namespace or an environment with
+                        the content of a module
+setRcppClass            Create a Class Extending a C++ Class
+sourceCpp               Source C++ Code from a File or String

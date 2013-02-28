@@ -1,0 +1,82 @@
+package GenerateImage;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.rosuda.JRI.REXP;
+import org.rosuda.JRI.Rengine;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+/**
+ * Servlet implementation class UploadMzxmlServlet
+ */
+public class UploadMzxmlServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+	// private static final String UPLOAD_DIRECTORY = "C:/Job/Milestones/glycoSpectrumScan/WebContent/upload";
+	 private static final String UPLOAD_DIRECTORY = "C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/R/2.15/msdata/threonine";
+	 private static final int THRESHOLD_SIZE = 1024 * 1024 * 10; // 10MB
+	 private static final int MAX_FILE_SIZE = 1024 * 1024 * 40; // 40MB
+	 private static final int REQUEST_SIZE = 1024 * 1024 * 50; // 50MB   
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UploadMzxmlServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 DiskFileItemFactory factory = new DiskFileItemFactory();
+	     factory.setSizeThreshold(THRESHOLD_SIZE);
+	     factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
+	     ServletFileUpload upload = new ServletFileUpload(factory);
+	     upload.setFileSizeMax(MAX_FILE_SIZE);
+	     upload.setSizeMax(REQUEST_SIZE);
+	     String uploadPath = UPLOAD_DIRECTORY;
+	     File uploadDir = new File(uploadPath);
+	        if (!uploadDir.exists()) {
+	            uploadDir.mkdir();
+	     }
+	     
+	     try {
+	    	 List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+	    	 for (FileItem item : items) {
+	    		String fileName = new File(item.getName()).getName();
+ 			if(fileName.equals("")) continue;
+             String filePath = uploadPath + File.separator + fileName;
+             File storeFile = new File(filePath);
+             
+             // saves the file on disk
+             item.write(storeFile);
+	    	 }
+	     }catch (Exception ex) {
+		           
+		 } 
+		
+	     
+	     //test mc
+	     Rengine re=new Rengine (new String [] {"--vanilla"}, false, null);
+		// REXP x;
+		 re.eval("library(msdata)");
+	     re.eval("library(mzR)");
+	     //end
+				
+	    RgetMtrix Rm = new RgetMtrix();
+		double [][] matrix= Rm.getMatrix(re);
+		
+	}
+
+}

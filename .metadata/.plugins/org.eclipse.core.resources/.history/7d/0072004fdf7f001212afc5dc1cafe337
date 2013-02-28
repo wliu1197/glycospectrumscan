@@ -1,0 +1,24 @@
+useDynLib(Rcpp, .registration = TRUE)
+
+import( methods )
+importFrom( utils, capture.output, assignInNamespace, .DollarNames, prompt, packageDescription )
+
+exportClasses( Module, "C++ObjectS3", "C++Field", 
+    "C++OverloadedMethods", 
+    "C++Constructor", 
+    "C++Class", "C++Object", "C++Function", 
+    "C++ClassRepresentation"
+    )
+
+S3method( .DollarNames, "C++Object" )
+S3method( .DollarNames, "Module" )
+exportMethods( prompt, show, .DollarNames, initialize, "formals<-" )
+
+export( 
+    Module, Rcpp.package.skeleton, populate, loadRcppModules, setRcppClass,
+       loadModule, cppFunction, evalCpp, sourceCpp, compileAttributes
+)
+
+exportClass(RcppClass)
+
+

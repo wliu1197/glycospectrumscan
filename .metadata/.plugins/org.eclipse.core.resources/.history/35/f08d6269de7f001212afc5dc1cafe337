@@ -1,0 +1,40 @@
+package GenerateImage;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.rosuda.JRI.REXP;
+import org.rosuda.JRI.Rengine;
+
+/**
+ * Servlet implementation class UploadMzxmlServlet
+ */
+public class UploadMzxmlServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UploadMzxmlServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Rengine re=new Rengine (new String [] {"--vanilla"}, false, null);
+		 re.eval("source('http://bioconductor.org/biocLite.R')");
+	        re.eval("biocLite('mzR')");
+	        re.eval("source('http://bioconductor.org/biocLite.R')");
+	        
+	        re.eval("biocLite('msdata')");
+	        re.end();
+	     RgetMtrix Rm = new RgetMtrix();
+		double [][] matrix= Rm.getMatrix();
+		
+	}
+
+}

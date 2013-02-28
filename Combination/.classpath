@@ -3,5 +3,9 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="src/postgresql-9.2-1002.jdbc4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/R/R-2.15.2/library/rJava/jri/JRI.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/R/R-2.15.2/library/rJava/jri/JRIEngine.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/R/R-2.15.2/library/rJava/jri/REngine.jar"/>
+	<classpathentry kind="src" path="/Rproject"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

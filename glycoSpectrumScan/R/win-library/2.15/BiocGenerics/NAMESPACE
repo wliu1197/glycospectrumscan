@@ -1,0 +1,116 @@
+import(methods)
+import(graphics)
+import(stats)
+
+exportClasses(
+    ## from R/connection-classes.R:
+    connection, file, url, gzfile, bzfile, unz, pipe, sockconn,
+    terminal, textConnection, gzcon, characterORconnection
+)
+
+
+### ==========================================================================
+### Functions defined in base R and explicitly promoted to generics in the
+### BiocGenerics package
+### --------------------------------------------------------------------------
+
+export(
+    ## from R/boxplot.R:
+    boxplot,
+
+    ## from R/cbind.R:
+    cbind, rbind,
+
+    ## from R/density.R:
+    density,
+
+    ## from R/duplicated.R:
+    duplicated, anyDuplicated,
+
+    ## from R/eval.R:
+    eval,
+
+    ## from R/Extremes.R:
+    pmax, pmin, pmax.int, pmin.int,
+
+    ## from R/funprog.R:
+    Reduce, Filter, Find, Map, Position,
+
+    ## from R/get.R:
+    get, mget,
+
+    ## from R/image.R:
+    image,
+
+    ## from R/lapply.R:
+    lapply, sapply,
+
+    ## from R/mapply.R:
+    mapply,
+
+    ## from R/nrow.R:
+    nrow, ncol, NROW, NCOL,
+
+    ## from R/order.R:
+    order,
+
+    ## from R/paste.R:
+    paste,
+
+    ## from R/rep.R:
+    rep.int,
+
+    ## from R/residuals.R:
+    residuals,
+
+    ## from R/row_colnames.R:
+    rownames, colnames,
+
+    ## from R/sets.R:
+    union, intersect, setdiff,
+
+    ## from R/table.R:
+    table,
+
+    ## from R/tapply.R:
+    tapply,
+
+    ## from R/unique.R:
+    unique,
+
+    ## from R/weights.R:
+    weights,
+
+    ## from R/xtabs.R:
+    xtabs
+)
+
+
+### ==========================================================================
+### Bioconductor specific generics and their methods
+### --------------------------------------------------------------------------
+
+export(
+    ## from R/annotation.R:
+    annotation, "annotation<-",
+
+    ## from R/combine.R:
+    combine,
+
+    ## from R/strand.R:
+    strand, "strand<-",
+
+    ## from R/updateObject.R:
+    updateObject,
+    updateObjectFromSlots,
+    getObjectSlots
+)
+
+exportMethods(
+    ## from R/combine.R:
+    combine,
+
+    ## from R/updateObject.R:
+    updateObject
+)
+

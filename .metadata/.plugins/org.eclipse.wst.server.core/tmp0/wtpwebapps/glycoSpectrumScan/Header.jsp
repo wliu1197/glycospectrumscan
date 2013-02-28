@@ -20,14 +20,19 @@
 <link href="css/bootstrap-responsive.css" media="screen" type="text/css" rel="stylesheet">
 <link href="css/stylesnewlayout.css" media="screen" type="text/css" rel="stylesheet">
 <link href="css/bootstrapnewlayout.css" media="screen" type="text/css" rel="stylesheet">
-
+<link href="css/bootstrap.css" media="screen" type="text/css" rel="stylesheet">
 
 
  <style type="text/css">
- 
-
+  
+	img.bg {
+	    width: 30%;
+	    }
       body {
-      	
+      
+      	background: url("img/background7.jpg") no-repeat;
+		background-size: 100%;
+      
         padding-top: 60px;
         padding-bottom: 40px;
      
@@ -47,19 +52,12 @@
   
         <ul class="nav">
           <li class="active"><a href="GlycanMass.jsp"><i class="icon-home icon-white"></i>Home</a></li>
-		<!--  <li><a href="GlycanMass.jsp">GlycanMass</a></li> --> 
-		  <li><a href="ProteinSequence.jsp">PeptideMass</a></li>
+		  <li><a href="GlycanMass.jsp">GlycanMass</a></li> 
+		  <li><a href="ProteinSequence.jsp">PeptideMass</a></li> 
+		  
 		</ul>
 		
-		<ul class="nav pull-right" >
-	        	   <li class="dropdown">
-	        	   	<a href ="#"  data-toggle="dropdown">GlycanMass<b class="caret"></b></a>	
-	        		 <ul class="dropdown-menu">
-	        			<li><a href="GlycanMass.jsp">By glycan composition	</a></li>
-	        			<li><a href="DirectlyInputGlycanMass.jsp">Directly input mass	</a></li>
-	        		 </ul>
-	        	   </li>	
-	    </ul>
+		
 		
 		<div id="headersearch" class="pull-right">
 		<ul>

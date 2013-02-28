@@ -1,0 +1,60 @@
+package GenerateImage;
+
+import org.rosuda.JRI.REXP;
+import org.rosuda.JRI.Rengine;
+
+public class RgetMtrix {
+	public double[][] getMatrix(){
+		Rengine re=new Rengine (new String [] {"--vanilla"}, false, null);
+		 REXP x;
+		re.eval("library(msdata)");
+	     re.eval("library(mzR)");
+	     
+	     //Change default working directory
+	   //  re.eval("setwd(file='C:/Users/wenhao/git/glyco/glycoSpectrumScan/R')");
+	       
+	   //  re.eval("mzxml <-list.files(path='C:/Users/wenhao/git/glyco/glycoSpectrumScan/R/win-library/2.15/msdata/threonine/testDataSet.mzXML',all.files = TURE)") ;  
+	     //   C:\Users\wenhao\git\glyco\glycoSpectrumScan\R\win-library\2.15\msdata\threonine\testDataSet.mzXML
+	    // C:\Users\wenhao\git\glyco\glycoSpectrumScan\R\win-library\2.15\msdata\threonine\testDataSet.mzXML
+	        
+	       re.eval("mzxml <- system.file('threoine/testDataSet.mzXML',package = 'msdata',mustWork=TRUE)");
+	       //  re.eval("mzxml <- source('C:/Users/wenhao/git/glyco/glycoSpectrumScan/R/win-library/2.15/msdata/threonine/testDataSet.mzXML')");
+	        re.eval("aa <- openMSfile(mzxml)") ;
+	        re.eval("pl <- peaks(aa,10)");
+	        re.eval("peaksCount(aa,10)");
+	        System.out.println(x=re.eval("head(pl)"));   
+	        double matrix [][] =x.asMatrix();
+	        for(int i=0; i<matrix.length; i++){
+	        	 for(int j=0; j<matrix[i].length; j++){
+	 	        	System.out.println(matrix[i][j]);
+	 	        }
+	        }
+	       
+	        
+		   //      re.eval("aa <- openMSfile(mzxml)");
+		   //      re.eval("pl <- peaks(aa,10)");
+		   //     System.out.println(x=re.eval("peaksCount(aa,10)"));
+		   //      System.out.println(x=re.eval("runInfo(aa)"));
+		       
+		      
+		        
+		   //      System.out.println (n);
+		        
+		
+			
+	      //  System.out.println (re.eval ("runif(1)").asDouble ());
+	        re.end();
+	        return matrix;
+	}
+	
+	public static void main (String[] args)
+    {
+		RgetMtrix Rm= new RgetMtrix();
+		double [][] matrix= Rm.getMatrix();
+		for(int i=0; i<matrix.length; i++){
+       	 for(int j=0; j<matrix[i].length; j++){
+	        	System.out.println(matrix[i][j]);
+	        }
+       }
+    }
+}

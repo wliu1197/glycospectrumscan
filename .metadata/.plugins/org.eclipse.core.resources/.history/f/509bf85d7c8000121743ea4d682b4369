@@ -1,0 +1,40 @@
+package GenerateImage;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.rosuda.JRI.REXP;
+import org.rosuda.JRI.Rengine;
+
+/**
+ * Servlet implementation class UploadMzxmlServlet
+ */
+public class UploadMzxmlServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+	// private static final String UPLOAD_DIRECTORY = "C:/Job/Milestones/glycoSpectrumScan/WebContent/upload";
+	 private static final String UPLOAD_DIRECTORY = "C:/Users/wenhao/git/glyco/glycoSpectrumScan/WebContent/upload";
+	 private static final int THRESHOLD_SIZE = 1024 * 1024 * 10; // 10MB
+	 private static final int MAX_FILE_SIZE = 1024 * 1024 * 40; // 40MB
+	 private static final int REQUEST_SIZE = 1024 * 1024 * 50; // 50MB   
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UploadMzxmlServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	    RgetMtrix Rm = new RgetMtrix();
+		double [][] matrix= Rm.getMatrix();
+		
+	}
+
+}

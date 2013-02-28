@@ -15,7 +15,7 @@
 	%>
 	<a name=top></a>
 	<div class="container">
-	 
+	 <div align="left"><img src="img/logo.png" class="bg"></div>
 	 	<div class="hero-unit">
 	 		<h1>Generate Mass Spectrum</h1><br>
 	<%
@@ -226,7 +226,7 @@
 					 <a class="btn btn-small" href='#Bottom'><i class="icon-arrow-down"> </i>Go Bottom</a>
 					
 					<p align="center" style="font-size:30px;"> <a>Result</a>	
-					<table align="center" id="Creat_table" border="1" cellpadding="10">
+					<table class="table table-striped" align="center" id="Creat_table" border="1" cellpadding="10">
 							<tr>
 								<td>Glyco Sequence</td>
 								<td>Combination</td>
@@ -241,7 +241,10 @@
 								<td>Charge State</td>
 							</tr>
 					
-					<%for(int i=0;i<glyco_sequence.size();i++) {%>
+					<%
+					
+					DecimalFormat df = new DecimalFormat("#.##");
+					for(int i=0;i<glyco_sequence.size();i++) {%>
 						
 							<tr>
 								<td><%=glyco_sequence.get(i) %></td>
@@ -314,9 +317,11 @@
 							    if(glyc[7]!=0) compositions += Integer.toString(glyc[7]) +"-"+"Sulphate <br>";
 							    
 							    
-								
-								
-								
+							    String MM = df.format(m_mass.get(i));
+							    String AM = df.format(a_mass.get(i));
+							    String XA = df.format(for_X_axis.get(i));
+							    String YA = df.format(for_Y_axis.get(i));
+								String NV = df.format(new_value.get(i));
 								
 								%>
 							
@@ -324,11 +329,11 @@
 								
 								
 								
-								<td><%=m_mass.get(i) %></td>
-								<td><%=a_mass.get(i) %></td>
+								<td><%=MM %></td>
+								<td><%=AM %></td>
 								<td><%=for_X_axis.get(i) %></td>
 								<td><%=for_Y_axis.get(i) %>
-								<td><%=new_value.get(i) %></td>
+								<td><%=NV %></td>
 								<td>(+/-)<%=Ranges %></td>
 								<td><%=Zs.get(i) %></td>
 								
@@ -376,20 +381,9 @@
 			</div>
 		</div>
 	<%} %>
-	<!-- 
-	<a>Charge state:</a><%=chargestateZ %>	<br>
-	<a>Range:</a><%=Ranges %>
-		 -->
+	
 	<%}%><br>
-	 <!--  
-	<% for(int i=0; i<gs_NM.size(); i++){ %>
-		<a>Mass adding to: </a> <%=gs.glyco_sequence.get(i) %></a><br>
-		<%for(int j=0; j<gs_NM.get(i).new_m_mass.size(); j++){ %>	
-			
-			<%=gs.Combination.get(i).Combination.get(j)%> <a>Combination Average_mass </a><%=gs.Combination.get(i).a_mass[j] %>   <a>: New Monoisotopic mass:</a> <%=gs_NM.get(i).new_m_mass.get(j)%> <a>New Average mass:</a> <%=gs_NM.get(i).new_a_mass.get(j)%> <br> 
-		<%} %>
-	<%} %>
-	-->
+	 
 	<br>
 		<footer>
         <p>&copy; Macquarie University 2012</p>

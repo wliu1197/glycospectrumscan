@@ -1,0 +1,28 @@
+Package: mzR
+Type: Package
+Title: parser for netCDF, mzXML, mzData and mzML files (mass
+        spectrometry data)
+Version: 1.4.6
+Author: Bernd Fischer, Steffen Neumann, Laurent Gatto
+Maintainer: Bernd Fischer <bernd.fischer@embl.de>, Steffen Neumann
+        <sneumann@ipb-halle.de>, Laurent Gatto <lg390@cam.ac.uk>
+Description: mzR provides a unified API to the common file formats 
+	     and parsers available for mass spectrometry data. 
+	     It comes with a wrapper for the ISB random access parser for mass 
+	     spectrometry mzXML, mzData and mzML files. The package 
+	     contains the original code written by the ISB, and a 
+	     subset of the proteowizard library for mzML. The netCDF reading 
+	     code has previously been used in XCMS.
+License: Artistic-2.0
+LazyLoad: yes
+Depends: Rcpp (>= 0.10.1), methods, utils
+Imports: Biobase
+Suggests: msdata (>= 0.1.9), RUnit, faahKO
+LinkingTo: Rcpp
+RcppModules: Ramp
+SystemRequirements: GNU make, NetCDF, zlib
+biocViews: Infrastructure, Bioinformatics, DataImport, Proteomics,
+        Metabolomics, MassSpectrometry
+Packaged: 2012-12-24 07:04:04 UTC; biocbuild
+Built: R 2.15.2; i386-w64-mingw32; 2012-12-24 12:41:28 UTC; windows
+Archs: i386, x64

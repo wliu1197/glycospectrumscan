@@ -1,0 +1,35 @@
+BiocGenerics-package    Generic functions for Bioconductor
+Extremes                Maxima and minima
+annotation              Accessing annotation information
+boxplot                 Box plots
+cbind                   Combine R objects by rows or columns
+combine                 Combining or merging different Bioconductor
+                        data structures
+connection-class        S4 connection classes
+density                 Kernel density estimation
+duplicated              Determine duplicate elements
+eval                    Evaluate an (unevaluated) expression
+funprog                 Common higher-order functions in functional
+                        programming languages
+get                     Return the value of a named object
+image                   Display a color image
+lapply                  Apply a function over a list-like or
+                        vector-like R object
+mapply                  Apply a function to multiple list-like or
+                        vector-like arguments
+nrow                    The number of rows/columns of an array-like
+                        object
+order                   Ordering permutation
+paste                   Concatenate strings
+rep.int                 Replicate elements of a vector-like R object
+residuals               Extract model residuals
+row+colnames            Row and column names
+sets                    Set operations
+strand                  Accessing strand information
+table                   Cross tabulation and table creation
+tapply                  Apply a function over a ragged array
+unique                  Extract unique elements
+updateObject            Update an object to its current class
+                        definition
+weights                 Extract model weights
+xtabs                   Cross tabulation

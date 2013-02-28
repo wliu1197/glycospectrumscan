@@ -169,4 +169,14 @@
     <servlet-name>GlycanMass_Directly_ImportServlet</servlet-name>
     <url-pattern>/GlycanMass_Directly_ImportServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadMzxmlServlet</display-name>
+    <servlet-name>UploadMzxmlServlet</servlet-name>
+    <servlet-class>GenerateImage.UploadMzxmlServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadMzxmlServlet</servlet-name>
+    <url-pattern>/UploadMzxmlServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

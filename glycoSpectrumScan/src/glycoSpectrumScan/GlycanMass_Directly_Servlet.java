@@ -122,6 +122,7 @@ public class GlycanMass_Directly_Servlet extends HttpServlet {
 			
 			
 			double result =0;
+			
 			int NeuGc = 0;
 			int NeuAc = 0;
 			int HexNAc = 0;
@@ -136,42 +137,15 @@ public class GlycanMass_Directly_Servlet extends HttpServlet {
 	 		
 			int tc=0;
         	
-        	for(int l=0; l< CompositionInDB.length; l++){
-        		
-        		if(CompositionInDB[l].equals(check)){
-        			
-        			Phosphate = count[0];
-    	 			Sulphate =count[1];
-    	 			Pentose =count[2];
-    	 			Deoxyhexose = count[3];
-    	 			Hexose = count[4];
-    	 			HexNAc = count[5];
-    	 			NeuAc = count[6];
-    	 			NeuGc = count[7];
-    	 			
-    	        	 
-    	 			glycans g = new glycans();
-    				g.NeuGc = NeuGc;
-    				g.NeuAc = NeuAc;
-    				g.HexNAc = HexNAc;
-    				g.Hexose = Hexose;
-    				g.Deoxyhexose = Deoxyhexose;
-    				g.Pentose = Pentose;
-    				g.Sulphate = Sulphate;
-    				g.Phosphate = Phosphate;
-    				g.Monoisotopic_Mass =Monoisotopic_Mass[i];
-    	 			g.Average_Mass = Average_Mass[i];
-    	 			glycanss.add(g);
-    	 			
-        		}
-        	}
-        	
-        	for(int l=0; l< CompositionInDB.length; l++){
-        		   		
+			
+			for(int l=1; l< CompositionInDB.length; l++){
+       		 
         		if(CompositionInDB[l].equals(check) ){
         			tc ++ ;
         			
-        		}else if(tc==0 && l==CompositionInDB.length-1){
+        		}
+        		
+        		if(tc==0 && l==CompositionInDB.length-1){
         			
         			for(int n=0;n<count.length; n++){
         				System.out.print(count[n] +"-"+names[n]+" ");
@@ -200,9 +174,52 @@ public class GlycanMass_Directly_Servlet extends HttpServlet {
     				g.Monoisotopic_Mass =Monoisotopic_Mass[i];
     	 			g.Average_Mass = Average_Mass[i];
     	 			glycansNOInDB.add(g);
+    	 			
+    	 			
+    	 			String glycan_NoInDB =  Integer.toString (glycanss.size()+1) ;
+    	 			request.setAttribute("glycan_NoInDB", glycan_NoInDB);
+    	 			RequestDispatcher dispatcher = request.getRequestDispatcher("GlycanMassError.jsp");
+    	 			if (dispatcher != null){
+
+    	 				  dispatcher.forward(request, response);
+
+    	 			} 
+    	 			return;
         			
         		}
         	}
+			
+			
+        	for(int l=1; l< CompositionInDB.length; l++){
+        		
+        		if(CompositionInDB[l].equals(check)){
+        			
+        			Phosphate = count[0];
+    	 			Sulphate =count[1];
+    	 			Pentose =count[2];
+    	 			Deoxyhexose = count[3];
+    	 			Hexose = count[4];
+    	 			HexNAc = count[5];
+    	 			NeuAc = count[6];
+    	 			NeuGc = count[7];
+    	 			
+    	        	 
+    	 			glycans g = new glycans();
+    				g.NeuGc = NeuGc;
+    				g.NeuAc = NeuAc;
+    				g.HexNAc = HexNAc;
+    				g.Hexose = Hexose;
+    				g.Deoxyhexose = Deoxyhexose;
+    				g.Pentose = Pentose;
+    				g.Sulphate = Sulphate;
+    				g.Phosphate = Phosphate;
+    				g.Monoisotopic_Mass =Monoisotopic_Mass[i];
+    	 			g.Average_Mass = Average_Mass[i];
+    	 			glycanss.add(g);
+    	 			
+        		}
+        	}
+        
         	for(int x=0; x<count.length; x++){
          		  count[x] =0;
          	 }

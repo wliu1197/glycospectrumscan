@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Generic functions for Bioconductor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+<h1> Generic functions for Bioconductor
+<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]">
+</h1>
+<hr>
+<div align="center">
+<a href="../../../doc/html/packages.html"><img src="../../../doc/html/left.jpg" alt="[Up]" width="30" height="30" border="0"></a>
+<a href="../../../doc/html/index.html"><img src="../../../doc/html/up.jpg" alt="[Top]" width="30" height="30" border="0"></a>
+</div><h2>Documentation for package &lsquo;BiocGenerics&rsquo; version 0.4.0</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td width="25%"><a href="BiocGenerics-package.html">BiocGenerics-package</a></td>
+<td>Generic functions for Bioconductor</td></tr>
+<tr><td width="25%"><a href="annotation.html">annotation</a></td>
+<td>Accessing annotation information</td></tr>
+<tr><td width="25%"><a href="annotation.html">annotation&lt;-</a></td>
+<td>Accessing annotation information</td></tr>
+<tr><td width="25%"><a href="duplicated.html">anyDuplicated</a></td>
+<td>Determine duplicate elements</td></tr>
+<tr><td width="25%"><a href="BiocGenerics-package.html">BiocGenerics</a></td>
+<td>Generic functions for Bioconductor</td></tr>
+<tr><td width="25%"><a href="boxplot.html">boxplot</a></td>
+<td>Box plots</td></tr>
+<tr><td width="25%"><a href="connection-class.html">bzfile-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="cbind.html">cbind</a></td>
+<td>Combine R objects by rows or columns</td></tr>
+<tr><td width="25%"><a href="connection-class.html">characterORconnection-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="row_colnames.html">colnames</a></td>
+<td>Row and column names</td></tr>
+<tr><td width="25%"><a href="combine.html">combine</a></td>
+<td>Combining or merging different Bioconductor data structures</td></tr>
+<tr><td width="25%"><a href="combine.html">combine-method</a></td>
+<td>Combining or merging different Bioconductor data structures</td></tr>
+<tr><td width="25%"><a href="connection-class.html">connection-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="density.html">density</a></td>
+<td>Kernel density estimation</td></tr>
+<tr><td width="25%"><a href="duplicated.html">duplicated</a></td>
+<td>Determine duplicate elements</td></tr>
+<tr><td width="25%"><a href="eval.html">eval</a></td>
+<td>Evaluate an (unevaluated) expression</td></tr>
+<tr><td width="25%"><a href="Extremes.html">Extremes</a></td>
+<td>Maxima and minima</td></tr>
+<tr><td width="25%"><a href="connection-class.html">file-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="funprog.html">Filter</a></td>
+<td>Common higher-order functions in functional programming languages</td></tr>
+<tr><td width="25%"><a href="funprog.html">Find</a></td>
+<td>Common higher-order functions in functional programming languages</td></tr>
+<tr><td width="25%"><a href="funprog.html">funprog</a></td>
+<td>Common higher-order functions in functional programming languages</td></tr>
+<tr><td width="25%"><a href="get.html">get</a></td>
+<td>Return the value of a named object</td></tr>
+<tr><td width="25%"><a href="updateObject.html">getObjectSlots</a></td>
+<td>Update an object to its current class definition</td></tr>
+<tr><td width="25%"><a href="connection-class.html">gzcon-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="connection-class.html">gzfile-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="image.html">image</a></td>
+<td>Display a color image</td></tr>
+<tr><td width="25%"><a href="sets.html">intersect</a></td>
+<td>Set operations</td></tr>
+<tr><td width="25%"><a href="lapply.html">lapply</a></td>
+<td>Apply a function over a list-like or vector-like R object</td></tr>
+<tr><td width="25%"><a href="funprog.html">Map</a></td>
+<td>Common higher-order functions in functional programming languages</td></tr>
+<tr><td width="25%"><a href="mapply.html">mapply</a></td>
+<td>Apply a function to multiple list-like or vector-like arguments</td></tr>
+<tr><td width="25%"><a href="get.html">mget</a></td>
+<td>Return the value of a named object</td></tr>
+<tr><td width="25%"><a href="nrow.html">NCOL</a></td>
+<td>The number of rows/columns of an array-like object</td></tr>
+<tr><td width="25%"><a href="nrow.html">ncol</a></td>
+<td>The number of rows/columns of an array-like object</td></tr>
+<tr><td width="25%"><a href="nrow.html">NROW</a></td>
+<td>The number of rows/columns of an array-like object</td></tr>
+<tr><td width="25%"><a href="nrow.html">nrow</a></td>
+<td>The number of rows/columns of an array-like object</td></tr>
+<tr><td width="25%"><a href="order.html">order</a></td>
+<td>Ordering permutation</td></tr>
+<tr><td width="25%"><a href="paste.html">paste</a></td>
+<td>Concatenate strings</td></tr>
+<tr><td width="25%"><a href="connection-class.html">pipe-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="Extremes.html">pmax</a></td>
+<td>Maxima and minima</td></tr>
+<tr><td width="25%"><a href="Extremes.html">pmax.int</a></td>
+<td>Maxima and minima</td></tr>
+<tr><td width="25%"><a href="Extremes.html">pmin</a></td>
+<td>Maxima and minima</td></tr>
+<tr><td width="25%"><a href="Extremes.html">pmin.int</a></td>
+<td>Maxima and minima</td></tr>
+<tr><td width="25%"><a href="funprog.html">Position</a></td>
+<td>Common higher-order functions in functional programming languages</td></tr>
+<tr><td width="25%"><a href="cbind.html">rbind</a></td>
+<td>Combine R objects by rows or columns</td></tr>
+<tr><td width="25%"><a href="funprog.html">Reduce</a></td>
+<td>Common higher-order functions in functional programming languages</td></tr>
+<tr><td width="25%"><a href="rep.html">rep.int</a></td>
+<td>Replicate elements of a vector-like R object</td></tr>
+<tr><td width="25%"><a href="residuals.html">residuals</a></td>
+<td>Extract model residuals</td></tr>
+<tr><td width="25%"><a href="row_colnames.html">row+colnames</a></td>
+<td>Row and column names</td></tr>
+<tr><td width="25%"><a href="row_colnames.html">rownames</a></td>
+<td>Row and column names</td></tr>
+<tr><td width="25%"><a href="lapply.html">sapply</a></td>
+<td>Apply a function over a list-like or vector-like R object</td></tr>
+<tr><td width="25%"><a href="sets.html">setdiff</a></td>
+<td>Set operations</td></tr>
+<tr><td width="25%"><a href="sets.html">sets</a></td>
+<td>Set operations</td></tr>
+<tr><td width="25%"><a href="connection-class.html">sockconn-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="strand.html">strand</a></td>
+<td>Accessing strand information</td></tr>
+<tr><td width="25%"><a href="strand.html">strand&lt;-</a></td>
+<td>Accessing strand information</td></tr>
+<tr><td width="25%"><a href="table.html">table</a></td>
+<td>Cross tabulation and table creation</td></tr>
+<tr><td width="25%"><a href="tapply.html">tapply</a></td>
+<td>Apply a function over a ragged array</td></tr>
+<tr><td width="25%"><a href="connection-class.html">terminal-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="connection-class.html">textConnection-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="sets.html">union</a></td>
+<td>Set operations</td></tr>
+<tr><td width="25%"><a href="unique.html">unique</a></td>
+<td>Extract unique elements</td></tr>
+<tr><td width="25%"><a href="connection-class.html">unz-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="updateObject.html">updateObject</a></td>
+<td>Update an object to its current class definition</td></tr>
+<tr><td width="25%"><a href="updateObject.html">updateObject-method</a></td>
+<td>Update an object to its current class definition</td></tr>
+<tr><td width="25%"><a href="updateObject.html">updateObjectFromSlots</a></td>
+<td>Update an object to its current class definition</td></tr>
+<tr><td width="25%"><a href="connection-class.html">url-class</a></td>
+<td>S4 connection classes</td></tr>
+<tr><td width="25%"><a href="weights.html">weights</a></td>
+<td>Extract model weights</td></tr>
+<tr><td width="25%"><a href="xtabs.html">xtabs</a></td>
+<td>Cross tabulation</td></tr>
+</table>
+</body></html>

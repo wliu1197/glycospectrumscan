@@ -8,4 +8,8 @@
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="GenerateImage.DatabaseMethods"/>
+<fullyQualifiedTypeName name="org.rosuda.REngine.REXPMismatchException"/>
+<fullyQualifiedTypeName name="org.rosuda.REngine.REngineException"/>
+<fullyQualifiedTypeName name="org.rosuda.JRI.Rengine"/>
+<fullyQualifiedTypeName name="org.rosuda.JRI.RVector"/>
 </qualifiedTypeNameHistroy>

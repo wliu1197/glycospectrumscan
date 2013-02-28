@@ -127,9 +127,9 @@ public class DrawImagesServlet extends HttpServlet {
 		
 		JFreeChart chart = ChartFactory.createXYBarChart(
 				"Mass Spectrum", // chart title
-				"X-axis", // domain axis label
+				"Mass(m/z)", // domain axis label
 				false, 
-				 "Y-axis", // range axis label
+				 "Intensity", // range axis label
 				dataset, // data
 				PlotOrientation.VERTICAL, // orientation
 				true, // include legend
@@ -549,9 +549,9 @@ public class DrawImagesServlet extends HttpServlet {
 			
 			JFreeChart chart = ChartFactory.createXYBarChart(
 					"Mass Spectrum", // chart title
-					"X-axis", // domain axis label
+					"Mass(m/z)", // domain axis label
 					false, 
-					 "Y-axis", // range axis label
+					 "Intensity", // range axis label
 					dataset, // data
 					PlotOrientation.VERTICAL, // orientation
 					true, // include legend
@@ -620,7 +620,7 @@ public class DrawImagesServlet extends HttpServlet {
 		for(int i=0; i<structureIDs.size(); i++){
 			
 			String [] structureID = structureIDs.get(i);
-			double count =40;
+			double count =18;
 			
 			for(String s: structureID){
 				
@@ -657,7 +657,7 @@ public class DrawImagesServlet extends HttpServlet {
 								
 								plot.addAnnotation(a1);
 								
-								count +=30;
+								count +=10;
 								
 								break;
 							}
@@ -887,6 +887,7 @@ public class DrawImagesServlet extends HttpServlet {
 //				 System.out.println();
 			 }
 			 LinkedList <String []> structureIDs =new LinkedList <String[]> (); 
+			
 			 for(int i=0; i<combination_average_mass.length; i++){
 				 DatabaseMethods dbM = new DatabaseMethods();
 				 String [] CompositionID = dbM.GetCompositionID(combination_average_mass[i]);

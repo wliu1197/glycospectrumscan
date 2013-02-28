@@ -1,7 +1,13 @@
 <%@ include file="Header.jsp" %>
 <body>
 	 <div class="container">
-	 
+	 <div align="left"><img src="img/logo.png" class="bg"></div>
+	 	<ul class= "nav nav-tabs ">
+				<li   ><a  href="GlycanMass.jsp">Glycan composition mass</a></li>
+				<li class="active" ><a   href="DirectlyInputGlycanMass.jsp">Directly input glycan mass</a></li>
+			
+		
+			</ul>
 	 	<div class="hero-unit">
 	 	
 	 		<form action="GlycanMassDirectlyInputServlet" method="post" name="TableForm" >
@@ -32,8 +38,8 @@
 		 						<option value="19">19</option>
 		 						<option value="20">20</option>
 		 					</select>
-		 					<br>
-		 					<br><input class="btn btn-primary btn-medium" type="submit" value="Submit">
+		 					
+		 					<input class="btn btn-primary btn-medium" type="submit" value="Submit">
 		 					</td>
 		 				</tr>
 		 			</table>	
@@ -44,7 +50,7 @@
 	 		<table border="0" >
 	 		<tr>
 	 		<td>
-	 		<a>Or import text file here:</a>   
+	 		
 	 		</td>
 	 		<td  style="text-align: right; width: 500px">
 	 		
@@ -53,10 +59,12 @@
 	 		</table>
 	 		<form method="post" action="GlycanMass_Directly_ImportServlet"  enctype="multipart/form-data">
 	 			Select file to import: <input type="file" name="dataFile" id="fileChooser" />
-	 		<a href=".\upload\DirctlyInputMass123321.txt" target="_blank">Example data format</a><br>	
-	 		<br >
-	 		<br > <input class="btn btn-primary btn-medium" type="submit" value="Import" />
 	 		
+	 		
+	 		<input class="btn btn-primary btn-medium" type="submit" value="Import" />
+	 		<br>
+	 		<br>
+	 		<a href=".\upload\DirctlyInputMass123321.txt" target="_blank">Example data format</a>
 	 		</form>
 	 	
 	 	
@@ -84,7 +92,7 @@
 	 					<div class="span3">
 	 					<h2>Glycan_<%=index %></h2>
 	 					<table >
-	 					  	<td><a>Monoisotopic Mass:</a></td><td> <input type="text"  style="width: 80px; height: 15px" name="Monoisotopic_Mass" /></td> 
+	 					  	<td><a>Monoisotopic Mass:</a></td><td> <input type="text"  style="width: 80px; height: 15px" name="Monoisotopic_Mass"/></td> 
 	 					   </tr>
 	 					    <tr>	
 	 					   	<td><a>Average Mass:</a></td><td> <input type="text"  style="width: 80px; height: 15px" name="Average_Mass" /></td>
@@ -100,7 +108,8 @@
 	 	    </form>
 	 	<%} %>
 	 	<br>
-	 
+	 <footer>
+        <p>&copy; Macquarie University 2012</p>
 	 </div>
 </body>
 </html>

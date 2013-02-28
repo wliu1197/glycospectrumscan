@@ -3,6 +3,7 @@
 				<% 
 				
 				if(request.getAttribute("glycanss")!=null){
+					
 					ArrayList <glycans> gs  = (ArrayList <glycans>)request.getAttribute("glycanss");
 				%>
 				
@@ -27,7 +28,7 @@
 				<tr>
 					<td> 
 					<h1> PeptideMass</h1>
-						<a>Protein Sequence: </a> <p> </p><textarea id="ProteinSequence" name="ProteinSequence" style="height:200px;width:350px;" cols="40" rows="5"></textarea> </br>
+						<a>Protein Sequence: Enter a protein sequence or  accession number (e.g: P04406) </a> <p> </p><textarea id="ProteinSequence" name="ProteinSequence" style="height:200px;width:350px;" cols="40" rows="5"></textarea> </br>
 						
 						<a>with cysteines treated with: </a>
 						<select  name="Treat" id="Treat" >
